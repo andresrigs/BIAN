@@ -1,0 +1,13 @@
+unique_name: Card Minimum Payment Due
+object_type: metric
+label: Card Minimum Payment Due
+description: "Minimum payment due at period end."
+calculation_method: sum
+dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+column: MIN_PAYMENT_DUE_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat
+semi_additive:
+  position: last
+  relationships:
+  - card_snapshot_Date_Snapshot

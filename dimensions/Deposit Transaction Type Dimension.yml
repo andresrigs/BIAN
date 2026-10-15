@@ -1,0 +1,29 @@
+unique_name: Deposit Transaction Type Dimension
+object_type: dimension
+label: Deposit Transaction Type Dimension
+description: "Debit/credit indicator and BIAN behavior-qualifier transaction type for deposit postings."
+is_degenerate: true
+hierarchies:
+- unique_name: Deposit Transaction Type
+  label: Deposit Transaction Type
+  description: "Debit/credit indicator and BIAN behavior-qualifier transaction type for deposit postings."
+  folder: Deposit Transaction Attributes
+  levels:
+  - unique_name: Debit Credit Indicator
+  - unique_name: Deposit Transaction Type
+level_attributes:
+- unique_name: Debit Credit Indicator
+  label: Debit Credit Indicator
+  description: "Debit or Credit."
+  dataset: FACT_DEPOSIT_TRANSACTION
+  name_column: DEBIT_CREDIT_IND
+  key_columns:
+  - DEBIT_CREDIT_IND
+- unique_name: Deposit Transaction Type
+  label: Deposit Transaction Type
+  description: "Deposit, Withdrawal, Payment, Sweep, Interest, Charge."
+  dataset: FACT_DEPOSIT_TRANSACTION
+  name_column: DEPOSIT_TXN_TYPE
+  key_columns:
+  - DEBIT_CREDIT_IND
+  - DEPOSIT_TXN_TYPE

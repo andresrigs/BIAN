@@ -1,0 +1,9 @@
+unique_name: Card Approved Transaction Count
+object_type: metric
+label: Card Approved Transaction Count
+description: "Number of approved authorizations (BIAN Card Authorization)."
+calculation_method: sum
+dataset: FACT_CARD_TRANSACTION
+column: APPROVED_FLAG
+format: "#,##0"
+unrelated_dimensions_handling: repeat

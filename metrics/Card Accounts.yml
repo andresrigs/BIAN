@@ -1,0 +1,9 @@
+unique_name: Card Accounts
+object_type: metric
+label: Card Accounts
+description: "Distinct card facilities with a snapshot in the period."
+calculation_method: count distinct
+dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+column: CARD_ACCOUNT_ID
+format: "#,##0"
+unrelated_dimensions_handling: repeat

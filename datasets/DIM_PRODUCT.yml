@@ -1,0 +1,23 @@
+unique_name: DIM_PRODUCT
+object_type: dataset
+label: DIM_PRODUCT
+description: "BIAN Product Directory: product instance catalogue, classified by BIAN Business Area, Business Domain and fulfilling Service Domain."
+connection_id: Connection - BIAN Banking
+table: DIM_PRODUCT
+columns:
+- name: PRODUCT_ID
+  data_type: long
+- name: PRODUCT_CODE
+  data_type: string
+- name: PRODUCT_NAME
+  data_type: string
+- name: PRODUCT_LINE
+  data_type: string
+- name: BIAN_BUSINESS_AREA
+  data_type: string
+- name: BIAN_BUSINESS_DOMAIN
+  data_type: string
+- name: BIAN_SERVICE_DOMAIN
+  data_type: string
+- name: INTEREST_BEARING_FLAG
+  data_type: string

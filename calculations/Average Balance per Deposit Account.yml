@@ -1,0 +1,6 @@
+unique_name: Average Balance per Deposit Account
+object_type: metric_calc
+label: Average Balance per Deposit Account
+description: "Ledger balance per deposit account."
+expression: "Divide([Measures].[Deposit Ledger Balance], [Measures].[Deposit Accounts])"
+format: "$#,##0.00"

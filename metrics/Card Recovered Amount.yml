@@ -1,0 +1,9 @@
+unique_name: Card Recovered Amount
+object_type: metric
+label: Card Recovered Amount
+description: "Amount recovered on resolved cases."
+calculation_method: sum
+dataset: FACT_CARD_CASE
+column: RECOVERED_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat

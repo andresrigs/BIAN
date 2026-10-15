@@ -1,0 +1,21 @@
+unique_name: DIM_ISSUED_DEVICE
+object_type: dataset
+label: DIM_ISSUED_DEVICE
+description: "BIAN Issued Device Administration, IssuedDeviceAllocation control record: physical cards, virtual cards and tokens."
+connection_id: Connection - BIAN Banking
+table: DIM_ISSUED_DEVICE
+columns:
+- name: ISSUED_DEVICE_ID
+  data_type: long
+- name: MASKED_PAN
+  data_type: string
+- name: CARD_ACCOUNT_ID
+  data_type: long
+- name: DEVICE_TYPE
+  data_type: string
+- name: DEVICE_STATUS
+  data_type: string
+- name: ISSUE_DATE
+  data_type: date
+- name: EXPIRY_DATE
+  data_type: date

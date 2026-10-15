@@ -1,0 +1,6 @@
+unique_name: Deposit Ledger Balance Prior Year
+object_type: metric_calc
+label: Deposit Ledger Balance Prior Year
+description: "Deposit Ledger Balance one year earlier, by Snapshot Date."
+expression: "CASE WHEN ISEMPTY([Measures].[Deposit Ledger Balance]) THEN NULL ELSE (ParallelPeriod([Snapshot Date Dimension].[Snapshot Date Hierarchy].[Snapshot Year], 1, [Snapshot Date Dimension].[Snapshot Date Hierarchy].CurrentMember), [Measures].[Deposit Ledger Balance]) END"
+format: "$#,##0.00"

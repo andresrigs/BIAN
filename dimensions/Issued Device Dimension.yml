@@ -1,0 +1,53 @@
+unique_name: Issued Device Dimension
+object_type: dimension
+label: Issued Device Dimension
+description: "BIAN Issued Device Administration — physical cards, virtual cards and wallet tokens."
+type: standard
+hierarchies:
+- unique_name: Issued Device Hierarchy
+  label: Issued Device Hierarchy
+  description: Device Type > Device.
+  folder: Issued Device Attributes
+  levels:
+  - unique_name: Device Type
+  - unique_name: Issued Device
+    secondary_attributes:
+    - unique_name: Device Status
+      label: Device Status
+      description: "Active, Suspended, Lost/Stolen, Expired (BIAN Issued Device Tracking)."
+      folder: Issued Device Attributes
+      dataset: DIM_ISSUED_DEVICE
+      name_column: DEVICE_STATUS
+      key_columns:
+      - DEVICE_STATUS
+    - unique_name: Device Issue Date
+      label: Device Issue Date
+      description: "Date the device was issued."
+      folder: Issued Device Attributes
+      dataset: DIM_ISSUED_DEVICE
+      name_column: ISSUE_DATE
+      key_columns:
+      - ISSUE_DATE
+    - unique_name: Device Expiry Date
+      label: Device Expiry Date
+      description: "Device expiry date."
+      folder: Issued Device Attributes
+      dataset: DIM_ISSUED_DEVICE
+      name_column: EXPIRY_DATE
+      key_columns:
+      - EXPIRY_DATE
+level_attributes:
+- unique_name: Device Type
+  label: Device Type
+  description: "Physical Card, Virtual Card or Token."
+  dataset: DIM_ISSUED_DEVICE
+  name_column: DEVICE_TYPE
+  key_columns:
+  - DEVICE_TYPE
+- unique_name: Issued Device
+  label: Issued Device
+  description: "Masked PAN; the PAN is the user-facing identifier."
+  dataset: DIM_ISSUED_DEVICE
+  name_column: MASKED_PAN
+  key_columns:
+  - ISSUED_DEVICE_ID

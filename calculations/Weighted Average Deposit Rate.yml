@@ -1,0 +1,6 @@
+unique_name: Weighted Average Deposit Rate
+object_type: metric_calc
+label: Weighted Average Deposit Rate
+description: "Balance-weighted average interest rate at period end."
+expression: "Divide([Measures].[Deposit Rate Weighted Balance], [Measures].[Deposit Ledger Balance])"
+format: "0.0000"

@@ -1,0 +1,6 @@
+unique_name: Deposit Average Transaction Value
+object_type: metric_calc
+label: Deposit Average Transaction Value
+description: "Average posting size."
+expression: "Divide([Measures].[Deposit Transaction Amount], [Measures].[Deposit Transaction Count])"
+format: "$#,##0.00"

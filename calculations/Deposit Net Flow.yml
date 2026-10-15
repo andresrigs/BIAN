@@ -1,0 +1,6 @@
+unique_name: Deposit Net Flow
+object_type: metric_calc
+label: Deposit Net Flow
+description: "Net inflow (credits minus debits)."
+expression: "[Measures].[Deposit Credits] - [Measures].[Deposit Debits]"
+format: "$#,##0.00"

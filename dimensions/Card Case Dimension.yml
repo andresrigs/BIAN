@@ -1,0 +1,39 @@
+unique_name: Card Case Dimension
+object_type: dimension
+label: Card Case Dimension
+description: "BIAN Card Case type, status and resolution outcome."
+is_degenerate: true
+hierarchies:
+- unique_name: Card Case
+  label: Card Case
+  description: "BIAN Card Case type, status and resolution outcome."
+  folder: Card Case Attributes
+  levels:
+  - unique_name: Card Case Type
+  - unique_name: Card Case Status
+  - unique_name: Resolution Outcome
+level_attributes:
+- unique_name: Card Case Type
+  label: Card Case Type
+  description: "Dispute, Chargeback, Fraud Claim or Arbitration."
+  dataset: FACT_CARD_CASE
+  name_column: CARD_CASE_TYPE
+  key_columns:
+  - CARD_CASE_TYPE
+- unique_name: Card Case Status
+  label: Card Case Status
+  description: "Open, Pending Merchant, Resolved, Closed."
+  dataset: FACT_CARD_CASE
+  name_column: CASE_STATUS
+  key_columns:
+  - CARD_CASE_TYPE
+  - CASE_STATUS
+- unique_name: Resolution Outcome
+  label: Resolution Outcome
+  description: "Cardholder Favor, Merchant Favor, Withdrawn, Pending."
+  dataset: FACT_CARD_CASE
+  name_column: RESOLUTION_OUTCOME
+  key_columns:
+  - CARD_CASE_TYPE
+  - CASE_STATUS
+  - RESOLUTION_OUTCOME

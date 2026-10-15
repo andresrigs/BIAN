@@ -1,0 +1,13 @@
+unique_name: Card Delinquent Balance
+object_type: metric
+label: Card Delinquent Balance
+description: "Outstanding balance on accounts 30+ days past due at period end."
+calculation_method: sum
+dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+column: DELINQUENT_BALANCE_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat
+semi_additive:
+  position: last
+  relationships:
+  - card_snapshot_Date_Snapshot

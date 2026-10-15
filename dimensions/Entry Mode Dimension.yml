@@ -1,0 +1,20 @@
+unique_name: Entry Mode Dimension
+object_type: dimension
+label: Entry Mode Dimension
+description: "POS entry mode (Chip, Contactless, Magstripe, eCommerce, Card-on-file)."
+is_degenerate: true
+hierarchies:
+- unique_name: Entry Mode
+  label: Entry Mode
+  description: "POS entry mode (Chip, Contactless, Magstripe, eCommerce, Card-on-file)."
+  folder: Card Transaction Attributes
+  levels:
+  - unique_name: Entry Mode
+level_attributes:
+- unique_name: Entry Mode
+  label: Entry Mode
+  description: "POS entry mode."
+  dataset: FACT_CARD_TRANSACTION
+  name_column: ENTRY_MODE
+  key_columns:
+  - ENTRY_MODE

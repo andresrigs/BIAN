@@ -1,0 +1,55 @@
+unique_name: FACT_CARD_TRANSACTION
+object_type: dataset
+label: FACT_CARD_TRANSACTION
+description: "Card transaction at authorization/capture grain (BIAN Card Authorization, Card Transaction Capture, Credit Card Position Keeping)."
+connection_id: Connection - BIAN Banking
+table: FACT_CARD_TRANSACTION
+columns:
+- name: CARD_TXN_ID
+  data_type: long
+- name: CARD_ACCOUNT_ID
+  data_type: long
+- name: ISSUED_DEVICE_ID
+  data_type: long
+- name: PARTY_ID
+  data_type: long
+- name: PRODUCT_ID
+  data_type: long
+- name: MERCHANT_ID
+  data_type: long
+- name: CHANNEL_ID
+  data_type: long
+- name: CURRENCY_CODE
+  data_type: string
+- name: TXN_DATE_KEY
+  data_type: long
+- name: POSTING_DATE_KEY
+  data_type: long
+- name: CARD_TXN_TYPE
+  data_type: string
+- name: AUTH_DECISION
+  data_type: string
+- name: DECLINE_REASON
+  data_type: string
+- name: ENTRY_MODE
+  data_type: string
+- name: TXN_AMT
+  data_type: double
+- name: INTERCHANGE_FEE_AMT
+  data_type: double
+- name: FX_CONVERSION_CHARGE_AMT
+  data_type: double
+- name: REWARD_POINTS_EARNED
+  data_type: long
+- name: CARD_PRESENT_FLAG
+  data_type: long
+- name: CROSS_BORDER_FLAG
+  data_type: long
+- name: FRAUD_FLAG
+  data_type: long
+- name: APPROVED_FLAG
+  data_type: long
+  sql: "CASE WHEN AUTH_DECISION = 'Approved' THEN 1 ELSE 0 END"
+- name: PURCHASE_AMT
+  data_type: double
+  sql: "CASE WHEN CARD_TXN_TYPE = 'Purchase' AND AUTH_DECISION = 'Approved' THEN TXN_AMT ELSE 0 END"

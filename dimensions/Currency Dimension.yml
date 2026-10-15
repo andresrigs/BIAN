@@ -1,0 +1,29 @@
+unique_name: Currency Dimension
+object_type: dimension
+label: Currency Dimension
+description: "ISO 4217 account / transaction currency."
+type: standard
+hierarchies:
+- unique_name: Currency Hierarchy
+  label: Currency Hierarchy
+  description: Currency.
+  folder: Currency Attributes
+  levels:
+  - unique_name: Currency Code
+    secondary_attributes:
+    - unique_name: Currency Name
+      label: Currency Name
+      description: "Currency name."
+      folder: Currency Attributes
+      dataset: DIM_CURRENCY
+      name_column: CURRENCY_NAME
+      key_columns:
+      - CURRENCY_NAME
+level_attributes:
+- unique_name: Currency Code
+  label: Currency Code
+  description: "ISO 4217 code; the code itself is the user-facing label."
+  dataset: DIM_CURRENCY
+  name_column: CURRENCY_CODE
+  key_columns:
+  - CURRENCY_CODE

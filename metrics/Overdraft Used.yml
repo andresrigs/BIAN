@@ -1,0 +1,13 @@
+unique_name: Overdraft Used
+object_type: metric
+label: Overdraft Used
+description: "Overdraft drawn at period end."
+calculation_method: sum
+dataset: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+column: OVERDRAFT_USED_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat
+semi_additive:
+  position: last
+  relationships:
+  - deposit_snapshot_Date_Snapshot

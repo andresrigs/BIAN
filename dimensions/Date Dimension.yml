@@ -1,0 +1,88 @@
+unique_name: Date Dimension
+object_type: dimension
+label: Date Dimension
+description: "Gregorian calendar shared by all BIAN facts; role-played as Snapshot, Transaction, Posting, Value, Case Opened and Case Closed dates."
+type: time
+hierarchies:
+- unique_name: Date Hierarchy
+  label: Date Hierarchy
+  description: Calendar Year > Quarter > Month > Day.
+  folder: Date Attributes
+  filter_empty: 'yes'
+  levels:
+  - unique_name: Year
+  - unique_name: Quarter
+    parallel_periods:
+    - key_columns:
+      - PRIOR_YEAR_NUM
+      level: Year
+    secondary_attributes:
+    - unique_name: Quarter Of Year
+      label: Quarter Of Year
+      description: "Quarter number within the year (1-4)."
+      folder: Date Attributes
+      dataset: DIM_DATE
+      name_column: QUARTER_OF_YEAR
+      key_columns:
+      - QUARTER_OF_YEAR
+  - unique_name: Month
+    parallel_periods:
+    - key_columns:
+      - PRIOR_YEAR_NUM
+      level: Year
+    secondary_attributes:
+    - unique_name: Month Of Year
+      label: Month Of Year
+      description: "Month number within the year (1-12)."
+      folder: Date Attributes
+      dataset: DIM_DATE
+      name_column: MONTH_OF_YEAR
+      key_columns:
+      - MONTH_OF_YEAR
+  - unique_name: Day
+    secondary_attributes:
+    - unique_name: Day Of Week Name
+      label: Day Of Week Name
+      description: "Weekday name (Monday..Sunday)."
+      folder: Date Attributes
+      dataset: DIM_DATE
+      name_column: DAY_OF_WEEK_NAME
+      key_columns:
+      - DAY_OF_WEEK_NAME
+level_attributes:
+- unique_name: Year
+  label: Year
+  description: "Calendar year."
+  dataset: DIM_DATE
+  name_column: YEAR_NAME
+  key_columns:
+  - YEAR_NUM
+  sort_column: YEAR_NUM
+  time_unit: year
+- unique_name: Quarter
+  label: Quarter
+  description: "Calendar quarter (e.g. Q1 2026)."
+  dataset: DIM_DATE
+  name_column: QUARTER_NAME
+  key_columns:
+  - QUARTER_KEY
+  sort_column: QUARTER_KEY
+  time_unit: quarter
+- unique_name: Month
+  label: Month
+  description: "Calendar month (e.g. Jan 2026)."
+  dataset: DIM_DATE
+  name_column: MONTH_NAME
+  key_columns:
+  - MONTH_KEY
+  sort_column: MONTH_KEY
+  time_unit: month
+- unique_name: Day
+  label: Day
+  description: "Calendar day."
+  dataset: DIM_DATE
+  name_column: DATE_NAME
+  key_columns:
+  - DATE_KEY
+  sort_column: DATE_KEY
+  time_unit: day

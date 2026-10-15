@@ -1,0 +1,29 @@
+unique_name: Authorization Decision Dimension
+object_type: dimension
+label: Authorization Decision Dimension
+description: "BIAN Card Authorization decision and decline reason."
+is_degenerate: true
+hierarchies:
+- unique_name: Authorization Decision
+  label: Authorization Decision
+  description: "BIAN Card Authorization decision and decline reason."
+  folder: Card Transaction Attributes
+  levels:
+  - unique_name: Authorization Decision
+  - unique_name: Decline Reason
+level_attributes:
+- unique_name: Authorization Decision
+  label: Authorization Decision
+  description: "Approved, Declined or Referred."
+  dataset: FACT_CARD_TRANSACTION
+  name_column: AUTH_DECISION
+  key_columns:
+  - AUTH_DECISION
+- unique_name: Decline Reason
+  label: Decline Reason
+  description: "Reason code for a declined / referred authorization."
+  dataset: FACT_CARD_TRANSACTION
+  name_column: DECLINE_REASON
+  key_columns:
+  - AUTH_DECISION
+  - DECLINE_REASON

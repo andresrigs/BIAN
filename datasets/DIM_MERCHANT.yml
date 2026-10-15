@@ -1,0 +1,19 @@
+unique_name: DIM_MERCHANT
+object_type: dataset
+label: DIM_MERCHANT
+description: "BIAN Merchant Relations / Merchant Acquiring Facility: merchant with MCC classification and acquirer."
+connection_id: Connection - BIAN Banking
+table: DIM_MERCHANT
+columns:
+- name: MERCHANT_ID
+  data_type: long
+- name: MERCHANT_NAME
+  data_type: string
+- name: MCC_CODE
+  data_type: string
+- name: MCC_CATEGORY
+  data_type: string
+- name: MERCHANT_COUNTRY
+  data_type: string
+- name: ACQUIRER_NAME
+  data_type: string

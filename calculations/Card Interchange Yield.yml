@@ -1,0 +1,6 @@
+unique_name: Card Interchange Yield
+object_type: metric_calc
+label: Card Interchange Yield
+description: "Interchange income as % of purchase volume."
+expression: "Divide([Measures].[Card Interchange Fee], [Measures].[Card Purchase Amount])"
+format: "0.00%"

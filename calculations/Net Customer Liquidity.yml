@@ -1,0 +1,6 @@
+unique_name: Net Customer Liquidity
+object_type: metric_calc
+label: Net Customer Liquidity
+description: "Deposits held minus card balances owed at period end."
+expression: "[Measures].[Deposit Ledger Balance] - [Measures].[Card Outstanding Balance]"
+format: "$#,##0.00"

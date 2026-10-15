@@ -1,0 +1,9 @@
+unique_name: Card Present Transaction Count
+object_type: metric
+label: Card Present Transaction Count
+description: "Card-present transactions."
+calculation_method: sum
+dataset: FACT_CARD_TRANSACTION
+column: CARD_PRESENT_FLAG
+format: "#,##0"
+unrelated_dimensions_handling: repeat

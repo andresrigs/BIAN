@@ -1,0 +1,7 @@
+unique_name: bian_model_catalog
+object_type: catalog
+label: BIAN Model
+description: Semantic layer aligned to the BIAN Service Landscape. Contains a Cards model, a Deposits model and the BIAN Model composite that combines them over conformed Party, Product, Branch, Currency, Channel and Date dimensions.
+version: 1.7
+aggressive_agg_promotion: false
+build_speculative_aggs: false

@@ -1,0 +1,62 @@
+unique_name: Card Account Dimension
+object_type: dimension
+label: Card Account Dimension
+description: "BIAN Credit Card facility (CreditCardFacility control record)."
+type: standard
+hierarchies:
+- unique_name: Card Account Hierarchy
+  label: Card Account Hierarchy
+  description: Card Network > Credit Plan Type > Card Account.
+  folder: Card Account Attributes
+  levels:
+  - unique_name: Card Network
+  - unique_name: Credit Plan Type
+  - unique_name: Card Account
+    secondary_attributes:
+    - unique_name: Card Account Status
+      label: Card Account Status
+      description: "Open, Suspended, Charged-off or Closed."
+      folder: Card Account Attributes
+      dataset: DIM_CARD_ACCOUNT
+      name_column: ACCOUNT_STATUS
+      key_columns:
+      - ACCOUNT_STATUS
+    - unique_name: Billing Cycle Day
+      label: Billing Cycle Day
+      description: "Statement cycle day of month (BIAN Billing BQ)."
+      folder: Card Account Attributes
+      dataset: DIM_CARD_ACCOUNT
+      name_column: BILLING_CYCLE_DAY
+      key_columns:
+      - BILLING_CYCLE_DAY
+    - unique_name: Card Account Open Date
+      label: Card Account Open Date
+      description: "Date the card facility was initiated."
+      folder: Card Account Attributes
+      dataset: DIM_CARD_ACCOUNT
+      name_column: OPEN_DATE
+      key_columns:
+      - OPEN_DATE
+level_attributes:
+- unique_name: Card Network
+  label: Card Network
+  description: "Card scheme the facility is affiliated with (BIAN Card Network Participant Facility)."
+  dataset: DIM_CARD_ACCOUNT
+  name_column: CARD_NETWORK
+  key_columns:
+  - CARD_NETWORK
+- unique_name: Credit Plan Type
+  label: Credit Plan Type
+  description: "BIAN CreditPlan BQ: Revolving, Charge (pay in full) or Installment."
+  dataset: DIM_CARD_ACCOUNT
+  name_column: CREDIT_PLAN_TYPE
+  key_columns:
+  - CARD_NETWORK
+  - CREDIT_PLAN_TYPE
+- unique_name: Card Account
+  label: Card Account
+  description: "Masked card account number."
+  dataset: DIM_CARD_ACCOUNT
+  name_column: CARD_ACCOUNT_NUMBER
+  key_columns:
+  - CARD_ACCOUNT_ID

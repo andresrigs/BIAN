@@ -1,0 +1,20 @@
+unique_name: Card Transaction Type Dimension
+object_type: dimension
+label: Card Transaction Type Dimension
+description: "Card transaction type (Purchase, Cash Advance, Refund, Payment, Fee, Interest)."
+is_degenerate: true
+hierarchies:
+- unique_name: Card Transaction Type
+  label: Card Transaction Type
+  description: "Card transaction type (Purchase, Cash Advance, Refund, Payment, Fee, Interest)."
+  folder: Card Transaction Attributes
+  levels:
+  - unique_name: Card Transaction Type
+level_attributes:
+- unique_name: Card Transaction Type
+  label: Card Transaction Type
+  description: "Card transaction type."
+  dataset: FACT_CARD_TRANSACTION
+  name_column: CARD_TXN_TYPE
+  key_columns:
+  - CARD_TXN_TYPE

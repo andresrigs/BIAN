@@ -1,0 +1,6 @@
+unique_name: Card Delinquency Rate
+object_type: metric_calc
+label: Card Delinquency Rate
+description: "30+ DPD balance as % of outstanding balance."
+expression: "Divide([Measures].[Card Delinquent Balance], [Measures].[Card Outstanding Balance])"
+format: "0.00%"

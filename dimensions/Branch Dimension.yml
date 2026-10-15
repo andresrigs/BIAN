@@ -1,0 +1,46 @@
+unique_name: Branch Dimension
+object_type: dimension
+label: Branch Dimension
+description: "BIAN Branch Location Management — servicing branch / booking location of an account."
+type: standard
+hierarchies:
+- unique_name: Branch Hierarchy
+  label: Branch Hierarchy
+  description: Country > Region > Branch.
+  folder: Branch Attributes
+  levels:
+  - unique_name: Branch Country
+  - unique_name: Branch Region
+  - unique_name: Branch Name
+    secondary_attributes:
+    - unique_name: Branch Type
+      label: Branch Type
+      description: "Full-service, Satellite, Digital or Corporate centre."
+      folder: Branch Attributes
+      dataset: DIM_BRANCH
+      name_column: BRANCH_TYPE
+      key_columns:
+      - BRANCH_TYPE
+level_attributes:
+- unique_name: Branch Country
+  label: Branch Country
+  description: "Country of the branch."
+  dataset: DIM_BRANCH
+  name_column: BRANCH_COUNTRY
+  key_columns:
+  - BRANCH_COUNTRY
+- unique_name: Branch Region
+  label: Branch Region
+  description: "Banking region."
+  dataset: DIM_BRANCH
+  name_column: BRANCH_REGION
+  key_columns:
+  - BRANCH_COUNTRY
+  - BRANCH_REGION
+- unique_name: Branch Name
+  label: Branch Name
+  description: "Branch."
+  dataset: DIM_BRANCH
+  name_column: BRANCH_NAME
+  key_columns:
+  - BRANCH_ID

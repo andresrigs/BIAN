@@ -1,0 +1,9 @@
+unique_name: Deposit Interest Paid
+object_type: metric
+label: Deposit Interest Paid
+description: "Interest paid / capitalised to depositors."
+calculation_method: sum
+dataset: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+column: INTEREST_PAID_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat

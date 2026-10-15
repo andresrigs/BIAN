@@ -1,0 +1,6 @@
+unique_name: Card Fraud Rate
+object_type: metric_calc
+label: Card Fraud Rate
+description: "Fraud-flagged transactions / all transactions."
+expression: "Divide([Measures].[Card Fraud Transaction Count], [Measures].[Card Transaction Count])"
+format: "0.00%"

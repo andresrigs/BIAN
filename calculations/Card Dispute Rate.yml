@@ -1,0 +1,6 @@
+unique_name: Card Dispute Rate
+object_type: metric_calc
+label: Card Dispute Rate
+description: "Disputed value as % of transaction value."
+expression: "Divide([Measures].[Card Disputed Amount], [Measures].[Card Transaction Amount])"
+format: "0.00%"

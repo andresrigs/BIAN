@@ -1,0 +1,6 @@
+unique_name: Card Authorization Approval Rate
+object_type: metric_calc
+label: Card Authorization Approval Rate
+description: "Approved authorizations / authorization requests."
+expression: "Divide([Measures].[Card Approved Transaction Count], [Measures].[Card Transaction Count])"
+format: "0.00%"

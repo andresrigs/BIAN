@@ -1,0 +1,6 @@
+unique_name: Total Customer Transaction Value
+object_type: metric_calc
+label: Total Customer Transaction Value
+description: "Card plus deposit transaction value; slice by Transaction Date for a common time axis."
+expression: "[Measures].[Card Transaction Amount] + [Measures].[Deposit Transaction Amount]"
+format: "$#,##0.00"

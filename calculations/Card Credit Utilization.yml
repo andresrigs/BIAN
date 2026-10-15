@@ -1,0 +1,6 @@
+unique_name: Card Credit Utilization
+object_type: metric_calc
+label: Card Credit Utilization
+description: "Outstanding balance as % of credit limit at period end."
+expression: "Divide([Measures].[Card Outstanding Balance], [Measures].[Card Credit Limit])"
+format: "0.00%"

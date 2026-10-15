@@ -1,0 +1,6 @@
+unique_name: Deposit to Card Balance Ratio
+object_type: metric_calc
+label: Deposit to Card Balance Ratio
+description: "Deposit balance per dollar of card balance at period end."
+expression: "Divide([Measures].[Deposit Ledger Balance], [Measures].[Card Outstanding Balance])"
+format: "#,##0.00"

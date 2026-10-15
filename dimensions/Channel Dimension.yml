@@ -1,0 +1,28 @@
+unique_name: Channel Dimension
+object_type: dimension
+label: Channel Dimension
+description: "Channel through which a card or deposit transaction was initiated (BIAN Channels business area)."
+type: standard
+hierarchies:
+- unique_name: Channel Hierarchy
+  label: Channel Hierarchy
+  description: Channel Type > Channel.
+  folder: Channel Attributes
+  levels:
+  - unique_name: Channel Type
+  - unique_name: Channel Name
+level_attributes:
+- unique_name: Channel Type
+  label: Channel Type
+  description: "Physical, Digital or Card Network."
+  dataset: DIM_CHANNEL
+  name_column: CHANNEL_TYPE
+  key_columns:
+  - CHANNEL_TYPE
+- unique_name: Channel Name
+  label: Channel Name
+  description: "Branch, ATM, POS, eCommerce, Mobile, Online Banking."
+  dataset: DIM_CHANNEL
+  name_column: CHANNEL_NAME
+  key_columns:
+  - CHANNEL_ID

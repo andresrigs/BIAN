@@ -1,0 +1,6 @@
+unique_name: Deposit Ledger Balance YoY Growth
+object_type: metric_calc
+label: Deposit Ledger Balance YoY Growth
+description: "Year-over-year growth in deposit balances, by Snapshot Date."
+expression: "Divide([Measures].[Deposit Ledger Balance] - [Measures].[Deposit Ledger Balance Prior Year], [Measures].[Deposit Ledger Balance Prior Year])"
+format: "0.00%"

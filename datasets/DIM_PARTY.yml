@@ -1,0 +1,27 @@
+unique_name: DIM_PARTY
+object_type: dataset
+label: DIM_PARTY
+description: "BIAN Party Reference Data Directory: customer / party master (PartyType, demographics, bank relations)."
+connection_id: Connection - BIAN Banking
+table: DIM_PARTY
+columns:
+- name: PARTY_ID
+  data_type: long
+- name: PARTY_NAME
+  data_type: string
+- name: PARTY_TYPE
+  data_type: string
+- name: CUSTOMER_SEGMENT
+  data_type: string
+- name: PARTY_STATUS
+  data_type: string
+- name: KYC_STATUS
+  data_type: string
+- name: COUNTRY_NAME
+  data_type: string
+- name: STATE_NAME
+  data_type: string
+- name: CITY_NAME
+  data_type: string
+- name: ONBOARDING_DATE
+  data_type: date

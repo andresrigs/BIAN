@@ -1,0 +1,9 @@
+unique_name: Deposit Credits
+object_type: metric
+label: Deposit Credits
+description: "Value credited to deposit accounts (inflows)."
+calculation_method: sum
+dataset: FACT_DEPOSIT_TRANSACTION
+column: CREDIT_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat

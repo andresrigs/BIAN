@@ -1,0 +1,6 @@
+unique_name: Overdraft Utilization
+object_type: metric_calc
+label: Overdraft Utilization
+description: "Overdraft drawn as % of arranged limit."
+expression: "Divide([Measures].[Overdraft Used], [Measures].[Overdraft Limit])"
+format: "0.00%"

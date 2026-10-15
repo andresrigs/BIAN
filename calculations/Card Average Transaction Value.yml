@@ -1,0 +1,6 @@
+unique_name: Card Average Transaction Value
+object_type: metric_calc
+label: Card Average Transaction Value
+description: "Average ticket size."
+expression: "Divide([Measures].[Card Transaction Amount], [Measures].[Card Transaction Count])"
+format: "$#,##0.00"

@@ -1,0 +1,9 @@
+unique_name: Card Fraud Transaction Count
+object_type: metric
+label: Card Fraud Transaction Count
+description: "Transactions flagged as fraud (BIAN Fraud Evaluation)."
+calculation_method: sum
+dataset: FACT_CARD_TRANSACTION
+column: FRAUD_FLAG
+format: "#,##0"
+unrelated_dimensions_handling: repeat

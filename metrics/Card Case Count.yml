@@ -1,0 +1,9 @@
+unique_name: Card Case Count
+object_type: metric
+label: Card Case Count
+description: "Number of card cases (disputes, chargebacks, fraud claims)."
+calculation_method: count non-null
+dataset: FACT_CARD_CASE
+column: CARD_CASE_ID
+format: "#,##0"
+unrelated_dimensions_handling: repeat

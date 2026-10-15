@@ -1,0 +1,180 @@
+unique_name: bian_deposits
+object_type: model
+label: BIAN Deposits
+description: "BIAN deposit products: Current Account, Savings Account, Term Deposit and Corporate Current Account service domains with Position Keeping postings."
+visible: true
+relationships:
+- unique_name: deposit_snapshot_Date_Snapshot
+  from:
+    dataset: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+    join_columns:
+    - SNAPSHOT_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: "Snapshot {0}"
+- unique_name: deposit_snapshot_Deposit_Account
+  from:
+    dataset: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+    join_columns:
+    - DEPOSIT_ACCOUNT_ID
+  to:
+    dimension: Deposit Account Dimension
+    level: Deposit Account
+- unique_name: deposit_snapshot_Party
+  from:
+    dataset: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+    join_columns:
+    - PARTY_ID
+  to:
+    dimension: Party Dimension
+    level: Party Name
+- unique_name: deposit_snapshot_Product
+  from:
+    dataset: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+    join_columns:
+    - PRODUCT_ID
+  to:
+    dimension: Product Dimension
+    level: Product Name
+- unique_name: deposit_snapshot_Branch
+  from:
+    dataset: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+    join_columns:
+    - BRANCH_ID
+  to:
+    dimension: Branch Dimension
+    level: Branch Name
+- unique_name: deposit_snapshot_Currency
+  from:
+    dataset: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+    join_columns:
+    - CURRENCY_CODE
+  to:
+    dimension: Currency Dimension
+    level: Currency Code
+- unique_name: deposit_txn_Date_Transaction
+  from:
+    dataset: FACT_DEPOSIT_TRANSACTION
+    join_columns:
+    - TXN_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: "Transaction {0}"
+- unique_name: deposit_txn_Date_Value
+  from:
+    dataset: FACT_DEPOSIT_TRANSACTION
+    join_columns:
+    - VALUE_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: "Value {0}"
+- unique_name: deposit_txn_Deposit_Account
+  from:
+    dataset: FACT_DEPOSIT_TRANSACTION
+    join_columns:
+    - DEPOSIT_ACCOUNT_ID
+  to:
+    dimension: Deposit Account Dimension
+    level: Deposit Account
+- unique_name: deposit_txn_Party
+  from:
+    dataset: FACT_DEPOSIT_TRANSACTION
+    join_columns:
+    - PARTY_ID
+  to:
+    dimension: Party Dimension
+    level: Party Name
+- unique_name: deposit_txn_Product
+  from:
+    dataset: FACT_DEPOSIT_TRANSACTION
+    join_columns:
+    - PRODUCT_ID
+  to:
+    dimension: Product Dimension
+    level: Product Name
+- unique_name: deposit_txn_Branch
+  from:
+    dataset: FACT_DEPOSIT_TRANSACTION
+    join_columns:
+    - BRANCH_ID
+  to:
+    dimension: Branch Dimension
+    level: Branch Name
+- unique_name: deposit_txn_Currency
+  from:
+    dataset: FACT_DEPOSIT_TRANSACTION
+    join_columns:
+    - CURRENCY_CODE
+  to:
+    dimension: Currency Dimension
+    level: Currency Code
+- unique_name: deposit_txn_Channel
+  from:
+    dataset: FACT_DEPOSIT_TRANSACTION
+    join_columns:
+    - CHANNEL_ID
+  to:
+    dimension: Channel Dimension
+    level: Channel Name
+dimensions:
+- Deposit Transaction Type Dimension
+metrics:
+- unique_name: Deposit Ledger Balance
+  folder: Deposit Balances
+- unique_name: Deposit Available Balance
+  folder: Deposit Balances
+- unique_name: Deposit Blocked Amount
+  folder: Deposit Balances
+- unique_name: Overdraft Limit
+  folder: Deposit Balances
+- unique_name: Overdraft Used
+  folder: Deposit Balances
+- unique_name: Term Deposit Principal
+  folder: Deposit Balances
+- unique_name: Dormant Deposit Balance
+  folder: Deposit Balances
+- unique_name: Dormant Deposit Accounts
+  folder: Deposit Balances
+- unique_name: Deposit Rate Weighted Balance
+  folder: Deposit Balances
+- unique_name: Deposit Accounts
+  folder: Deposit Balances
+- unique_name: Deposit Interest Accrued
+  folder: Deposit Income and Expense
+- unique_name: Deposit Interest Paid
+  folder: Deposit Income and Expense
+- unique_name: Deposit Maintenance Fees
+  folder: Deposit Income and Expense
+- unique_name: Deposit Transaction Fees
+  folder: Deposit Income and Expense
+- unique_name: Deposit Transaction Amount
+  folder: Deposit Activity
+- unique_name: Deposit Credits
+  folder: Deposit Activity
+- unique_name: Deposit Debits
+  folder: Deposit Activity
+- unique_name: Deposit Transaction Count
+  folder: Deposit Activity
+- unique_name: Transacting Depositors
+  folder: Deposit Activity
+- unique_name: Deposit Net Flow
+  folder: Deposit Ratios
+- unique_name: Weighted Average Deposit Rate
+  folder: Deposit Ratios
+- unique_name: Overdraft Utilization
+  folder: Deposit Ratios
+- unique_name: Deposit Dormancy Rate
+  folder: Deposit Ratios
+- unique_name: Average Balance per Deposit Account
+  folder: Deposit Ratios
+- unique_name: Deposit Average Transaction Value
+  folder: Deposit Ratios
+- unique_name: Deposit Ledger Balance Prior Year
+  folder: Deposit Time Intelligence
+- unique_name: Deposit Ledger Balance YoY Growth
+  folder: Deposit Time Intelligence
+- unique_name: Deposit Net Flow Year to Date
+  folder: Deposit Time Intelligence

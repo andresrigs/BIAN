@@ -1,0 +1,649 @@
+{
+ "CreditCard": {
+  "title": "Credit Card",
+  "description": "This service domain orchestrates the scheduled maintenance and transactional activities associated with credit card product fulfillment",
+  "control_record": [
+   "CreditCardFacility"
+  ],
+  "behavior_qualifiers": [
+   "Billing",
+   "CardPayment",
+   "Charge",
+   "CreditPlan",
+   "Interest",
+   "IssuedDevice",
+   "Repayment"
+  ],
+  "control_record_attributes": {
+   "CreditCardFacility": [
+    "ProductInstanceReference",
+    "CustomerReference",
+    "PartyReference",
+    "BankBranchLocationReference",
+    "AccountCurrency",
+    "SecondaryBillingCurrency",
+    "TaxReference",
+    "EntitlementOptionDefinition",
+    "EntitlementOptionSetting",
+    "RestrictionOptionDefinition",
+    "RestrictionOptionSetting",
+    "AllowedAccess",
+    "ConfigurationOptions",
+    "CreditCardFacilityOptionDefinition",
+    "CreditCardFacilityOptionSetting",
+    "Associations",
+    "AssociationType",
+    "AssociationObligationEntitlement",
+    "AssociationReference",
+    "LinkedAccounts",
+    "LinkType",
+    "AccountDetails",
+    "DateType",
+    "Date",
+    "StatementsSchedule",
+    "StatementType",
+    "StatementTransactionType",
+    "StatementPeriod",
+    "StatementReport",
+    "LimitSettings",
+    "LimitValue",
+    "LimitType"
+   ]
+  }
+ },
+ "CardAuthorization": {
+  "title": "Card Authorization",
+  "description": "This service domain is responsible for the real time card authorization decisions for credit/charge cards.",
+  "control_record": [
+   "CreditCardAuthorizationAssessment"
+  ],
+  "behavior_qualifiers": [
+   "Authentication",
+   "Authorization",
+   "CreditCheck",
+   "DeviceCheck",
+   "FraudCheck",
+   "StandIn"
+  ],
+  "control_record_attributes": {
+   "CreditCardAuthorizationAssessment": [
+    "NetworkReference",
+    "ParticipantAcquirerBankReference",
+    "ParticipantIssuerBankReference",
+    "CardTransactionRecord",
+    "CardTransactionProductInstanceReference",
+    "CardHolderReference",
+    "CardTransactionIssuedDeviceReference",
+    "CardTransactionNetworkReference",
+    "CardTransactionIssuingBankReference",
+    "CardTransactionMerchantAcquiringBankReference",
+    "CardTransactionType",
+    "CardTransactionCurrency",
+    "CardTransactionAmountType",
+    "CardTransactionAmount",
+    "CardTransactionMerchantReference",
+    "CardTransactionLocationReference",
+    "CardTransactionProductandServiceReference",
+    "CardTransactionDateandTime",
+    "CardTransactionFXConversionCharge",
+    "CardTransactionInterchargeFee",
+    "CardTransactionAuthorizationRecord"
+   ]
+  }
+ },
+ "CardCase": {
+  "title": "Card Case",
+  "description": "This service domain handles the processing of a customer card case, typically a disputed charge",
+  "control_record": [
+   "CardCaseProcedure"
+  ],
+  "behavior_qualifiers": [
+   "Arbitration",
+   "Chargeback",
+   "Consolidation",
+   "Resolution"
+  ],
+  "control_record_attributes": {
+   "CardCaseProcedure": [
+    "CardCaseType",
+    "ProductInstanceReference",
+    "CustomerReference",
+    "CustomerContactRecordReference",
+    "CaseLocation",
+    "Date",
+    "EmployeeBusinessUnitReference",
+    "CardTransactionReference",
+    "CardTransactionRecord",
+    "CardTransactionProductInstanceReference",
+    "CardHolderReference",
+    "CardTransactionIssuedDeviceReference",
+    "CardTransactionNetworkReference",
+    "CardTransactionIssuingBankReference",
+    "CardTransactionMerchantAcquiringBankReference",
+    "CardTransactionType",
+    "CardTransactionCurrency",
+    "CardTransactionAmountType",
+    "CardTransactionAmount",
+    "CardTransactionMerchantReference",
+    "CardTransactionLocationReference",
+    "CardTransactionProductandServiceReference",
+    "CardTransactionDateandTime",
+    "CardTransactionFXConversionCharge",
+    "CardTransactionInterchargeFee",
+    "CardTransactionAuthorizationRecord",
+    "CardCaseResolutionSchedule"
+   ]
+  }
+ },
+ "CardCollections": {
+  "title": "Card Collections",
+  "description": "This service domain administers the recovery of outstanding amounts from cancelled card accounts through internal or external collection agencies.  This may involve negotiating payment terms and/or interest write-downs.",
+  "control_record": [
+   "CardCollectionsProcedure"
+  ],
+  "behavior_qualifiers": [
+   "Assignment",
+   "Payment",
+   "PaymentTerms",
+   "Resolution"
+  ],
+  "control_record_attributes": {
+   "CardCollectionsProcedure": [
+    "ProductInstanceReference",
+    "ProductandServiceType",
+    "CustomerReference",
+    "CardType",
+    "CardAccountStatus",
+    "CardAccountLimits",
+    "ConfigurationOptions",
+    "TaxReference",
+    "BillingTransactions",
+    "BillingTransactionReference",
+    "PaymentTransactions",
+    "PaymentTransactionReference",
+    "ProductTransactions",
+    "ProductTransactionReference",
+    "Statements",
+    "StatementsReference",
+    "CardCollectionsProcessingSchedule"
+   ]
+  }
+ },
+ "CardTransactionCapture": {
+  "title": "Card Transaction Capture",
+  "description": "A distributed facility to capture card transactions at the point of sale",
+  "control_record": [
+   "CardFinancialCaptureTransaction"
+  ],
+  "behavior_qualifiers": [
+   "TransactionAuthorization",
+   "TransactionCapture",
+   "TransactionConsolidation",
+   "TransactionReversal"
+  ],
+  "control_record_attributes": {
+   "CardFinancialCaptureTransaction": [
+    "CardFinancialCaptureTransactionParameterType",
+    "CardFinancialCaptureTransactionSelectedOption",
+    "CardFinancialCaptureTransactionStatus",
+    "CardFinancialCaptureTransactionType",
+    "CardFinancialCaptureTransactionTransactionType",
+    "CardFinancialCaptureTransaction"
+   ]
+  }
+ },
+ "IssuedDeviceAdministration": {
+  "title": "Issued Device Administration",
+  "description": "This service domain administers the issuance of authentication tokens to customers and third party service providers. Tokens here include physical devices such as cards, fobs, readers and intangible 'devices' such as passwords and secret questions. Administration includes version tracking, replacement and duration/frequency limits. Specific product/service access permissions may be associated with an issued token when appropriate",
+  "control_record": [
+   "IssuedDeviceAllocation"
+  ],
+  "behavior_qualifiers": [
+   "BiometricAssignment",
+   "ChequesAssignment",
+   "DeviceAssignment",
+   "PasswordAssignment",
+   "QuestionAssignment",
+   "ReaderAssignment",
+   "TokenAssignment"
+  ],
+  "control_record_attributes": {
+   "IssuedDeviceAllocation": [
+    "CustomerReference",
+    "ProductInstanceReference",
+    "IssuedDeviceType",
+    "AssociatedPermissions",
+    "IssueDate",
+    "ValidFrom-ToDate"
+   ]
+  }
+ },
+ "MerchantAcquiringFacility": {
+  "title": "Merchant Acquiring Facility",
+  "description": "This service domain orchestrates the activities related to Merchant fulfillment, Merchant Account maintenance, Merchant transactional activities and settlement, including the billing of merchant fees and charges.",
+  "control_record": [
+   "MerchantAcquiringFacility"
+  ],
+  "behavior_qualifiers": [
+   "Charge",
+   "Chargeback",
+   "Clearing",
+   "Settlement",
+   "SupportFacility"
+  ],
+  "control_record_attributes": {
+   "MerchantAcquiringFacility": [
+    "ProductInstanceReference",
+    "CustomerReference",
+    "PartyReference",
+    "BankBranchLocationReference",
+    "AccountCurrency",
+    "TaxReference",
+    "MerchantAcquiringFacilityOperationalTerms",
+    "LimitSettings",
+    "LimitValue",
+    "LimitType"
+   ]
+  }
+ },
+ "MerchantRelations": {
+  "title": "Merchant Relations",
+  "description": "This service domain maintains the terms and conditions agreed with merchants for cards related activity",
+  "control_record": [
+   "MerchantRelationshipAgreement"
+  ],
+  "behavior_qualifiers": [
+   "LegalTerm",
+   "OperationalTerm",
+   "RegulatoryTerm"
+  ],
+  "control_record_attributes": {
+   "MerchantRelationshipAgreement": [
+    "MerchantRelationshipAgreementParameterType",
+    "MerchantRelationshipAgreementSelectedOption",
+    "MerchantRelationshipAgreementType",
+    "MerchantRelationshipAgreementReference",
+    "MerchantRelationshipAgreementDischargeRequest",
+    "MerchantRelationshipAgreementDischargeSchedule",
+    "MerchantRelationshipAgreementStatus",
+    "MerchantRelationshipAgreementAssociatedParty",
+    "MerchantRelationshipAgreementCustomerReference",
+    "MerchantRelationshipAgreementObligation",
+    "MerchantRelationshipAgreementEntitlement",
+    "MerchantRelationshipAgreementRegulationReference",
+    "MerchantRelationshipAgreementRegulationType",
+    "MerchantRelationshipAgreementJurisdiction",
+    "MerchantRelationshipAgreementAccountReference",
+    "MerchantRelationshipAgreementSubjectMatter",
+    "MerchantRelationshipAgreementProductReference",
+    "MerchantRelationshipAgreementCalendarReference",
+    "MerchantRelationshipAgreementAssociatedAgreementReference"
+   ]
+  }
+ },
+ "CardNetworkParticipantFacility": {
+  "title": "Card Network Participant Facility",
+  "description": "This service domain orchestrates the activities related to the inclusion of new Acquirers and Issuers in the Card Network, their terms and conditions and their status.",
+  "control_record": [
+   "CardNetworkParticipantAgreement"
+  ],
+  "behavior_qualifiers": [],
+  "control_record_attributes": {
+   "CardNetworkParticipantAgreement": [
+    "ProductandServiceReference",
+    "CustomerReference",
+    "PartyReference",
+    "FacilityTerms",
+    "ParticipantAcquirerBankReference",
+    "ParticipantAcquirerBankClearingandSettlementTerms",
+    "ParticipantAcquirerBankServiceSchedule",
+    "ParticipantIssuerBankReference",
+    "ParticipantIssuerBankClearingandSettlementTerms",
+    "ParticipantIssuerBankServiceSchedule"
+   ]
+  }
+ },
+ "RewardPointsAccount": {
+  "title": "Reward Points Account",
+  "description": "Administer the booking and remittance of rewards points",
+  "control_record": [
+   "RewardPointsLog"
+  ],
+  "behavior_qualifiers": [
+   "Capture",
+   "Expiration"
+  ],
+  "control_record_attributes": {
+   "RewardPointsLog": [
+    "RewardPointsLogParameterType",
+    "RewardPointsLogSelectedOption",
+    "RewardPointsLogType",
+    "RewardPointsLogSchedule",
+    "RewardPointsLogUsageLog",
+    "RewardPointsLogUpdateLog",
+    "RewardPointsLogReference",
+    "RewardPointsLogBusinessUnitReference",
+    "RewardPointsLogCustomerReference",
+    "RewardPointsLogServiceConfiguration",
+    "RewardPointsLogPosition",
+    "RewardPointsLogPositionType",
+    "RewardPointsLogPositionLimitTime"
+   ]
+  }
+ },
+ "CurrentAccount": {
+  "title": "Current Account",
+  "description": "This service domain orchestrates a consumer checking/demand deposit account. The typical range of services and fees covers payments and deposits, standing orders, sweeps, liens, check and debit card access.",
+  "control_record": [
+   "CurrentAccountFacility"
+  ],
+  "behavior_qualifiers": [
+   "AmountBlock",
+   "Booking",
+   "Charge",
+   "DebitandCredit",
+   "Deposit",
+   "Interest",
+   "IssuedDevice",
+   "Payment",
+   "Sweep"
+  ],
+  "control_record_attributes": {
+   "CurrentAccountFacility": [
+    "ProductInstanceReference",
+    "CurrentAccountNumber",
+    "CustomerReference",
+    "BankBranchLocationReference",
+    "AccountType",
+    "AccountCurrency",
+    "TaxReference",
+    "EntitlementOptionDefinition",
+    "EntitlementOptionSetting",
+    "RestrictionOptionDefinition",
+    "RestrictionOptionSetting",
+    "Associations",
+    "AssociationType",
+    "AssociationObligationorEntitlement",
+    "AssociationReference",
+    "LinkedAccounts",
+    "LinkType",
+    "AccountDetails",
+    "LimitType",
+    "LimitSettings",
+    "LimitValue",
+    "AccountDateType",
+    "AccountDate",
+    "AccountBalance",
+    "AccountStatus"
+   ]
+  }
+ },
+ "SavingsAccount": {
+  "title": "Savings Account",
+  "description": "This service domain orchestrates a consumer savings account. The typical range of services and fees covers payments from and scheduled and ad-hoc deposits to the account, standing orders, sweeps, and liens.",
+  "control_record": [
+   "SavingsAccountFacility"
+  ],
+  "behavior_qualifiers": [
+   "AmountBlock",
+   "Booking",
+   "Charge",
+   "DebitandCredit",
+   "Deposit",
+   "Interest",
+   "IssuedDevice",
+   "Payment",
+   "Sweep"
+  ],
+  "control_record_attributes": {
+   "SavingsAccountFacility": [
+    "ProductInstanceReference",
+    "SavingsAccountNumber",
+    "CustomerReference",
+    "BankBranchLocationReference",
+    "AccountType",
+    "AccountCurrency",
+    "TaxReference",
+    "EntitlementOptionDefinition",
+    "EntitlementOptionSetting",
+    "RestrictionOptionDefinition",
+    "RestrictionOptionSetting",
+    "Associations",
+    "AssociationType",
+    "AssociationObligationEntitlement",
+    "AssociationReference",
+    "LinkedAccounts",
+    "LinkType",
+    "AccountDetails",
+    "AccountDateType",
+    "AccountDate",
+    "LimitValue",
+    "LimitType",
+    "LimitSettings"
+   ]
+  }
+ },
+ "TermDeposit": {
+  "title": "Term Deposit",
+  "description": "A Term Deposit is an interest bearing account into which a customer can place a fixed amount of funds for a fixed amount of time. The Service Domain handles the opening, servicing and maturity processing of a Term Deposit.     ",
+  "control_record": [
+   "TermDepositFacility"
+  ],
+  "behavior_qualifiers": [
+   "AmountBlock",
+   "Booking",
+   "Charge",
+   "DebitandCredit",
+   "Deposit",
+   "Interest",
+   "IssuedDevice",
+   "Payments",
+   "Rollover",
+   "Sweep"
+  ],
+  "control_record_attributes": {
+   "TermDepositFacility": [
+    "ProductInstanceReference",
+    "AccountNumber",
+    "CustomerReference",
+    "BankBranchLocationReference",
+    "AccountType",
+    "AccountCurrency",
+    "TaxReference",
+    "EntitlementOptionDefinition",
+    "EntitlementOptionSetting",
+    "RestrictionOptionDefinition",
+    "RestrictionOptionSetting",
+    "Associations",
+    "AssociationType",
+    "AssociationObligationEntitlement",
+    "AssociationReference",
+    "LinkedAccounts",
+    "LinkType",
+    "AccountDetails",
+    "PositionLimits",
+    "PositionLimitType",
+    "PositionLimitSettings",
+    "PositionLimitValue",
+    "AccountDateType",
+    "AccountDate",
+    "StatementsSchedule",
+    "StatementType",
+    "StatementTransactionType",
+    "StatementPeriod",
+    "StatementReport",
+    "TermDepositAmount",
+    "TermDepositDuration",
+    "TermDepositMaturityDate",
+    "TermDepositOpenDate",
+    "InitialDepositPayerReference",
+    "InitialDepositPayerName",
+    "InitialDepositPayerAccountReference",
+    "InitialDepositPayerBankReference",
+    "InitialDepositAmount",
+    "InitialDepositValueDate",
+    "EarlyTerminationFeeAmount",
+    "EarlyTerminationDocumentReference",
+    "EarlyTerminationDocumentSummary",
+    "ClosingSettlementPayeeReference",
+    "ClosingSettlementPayeeName",
+    "ClosingSettlementPayeeAccountReference",
+    "ClosingSettlementPayeeExternalAccountNumber",
+    "ClosingSettlementPayeeBankReference",
+    "ClosingSettlementAmount",
+    "ClosingSettlementPaymentMechanismType",
+    "SalesProductAgreementReference",
+    "ContractNumberofPayer",
+    "LimitSettings",
+    "LimitValue",
+    "LimitType"
+   ]
+  }
+ },
+ "CorporateCurrentAccount": {
+  "title": "Corporate Current Account",
+  "description": "This service domain orchestrates a corporate checking/demand deposit account. The typical range of services and fees covers payments and deposits, standing orders, sweeps, liens, check and debit card access.",
+  "control_record": [
+   "CorporateCurrentAccountFacility"
+  ],
+  "behavior_qualifiers": [
+   "AmountBlock",
+   "Booking",
+   "Charge",
+   "DebitandCredit",
+   "Deposit",
+   "Interest",
+   "IssuedDevice",
+   "Payment",
+   "Sweep"
+  ],
+  "control_record_attributes": {
+   "CorporateCurrentAccountFacility": [
+    "ProductInstanceReference",
+    "CorporateCurrentAccountNumber",
+    "CustomerReference",
+    "BankBranchLocationReference",
+    "AccountType",
+    "AccountCurrency",
+    "TaxReference",
+    "EntitlementOptionDefinition",
+    "EntitlementOptionSetting",
+    "RestrictionOptionDefinition",
+    "RestrictionOptionSetting",
+    "Associations",
+    "AssociationType",
+    "AssociationObligationEntitlement",
+    "AssociationReference",
+    "LinkedAccounts",
+    "LinkType",
+    "AccountDetails",
+    "AccountDateType",
+    "AccountDate",
+    "LimitType",
+    "LimitValue",
+    "LimitSettings"
+   ]
+  }
+ },
+ "PositionKeeping": {
+  "title": "Position Keeping",
+  "description": "This service domain maintains a log of monetary or value transactions and entitlements log posted to product facilities. Reconciled financial transactions are subsequently used for posting to the accounting systems.",
+  "control_record": [
+   "FinancialPositionLog"
+  ],
+  "behavior_qualifiers": [
+   "FinancialTransactionCapture"
+  ],
+  "control_record_attributes": {
+   "FinancialPositionLog": [
+    "TransactionLogType",
+    "ProductInstanceReference",
+    "CustomerReference",
+    "CounterpartyReference",
+    "BaseCurrency",
+    "InterestApplicationRecord",
+    "InterestTransaction",
+    "TransactionDescription",
+    "TransactionRateType",
+    "TransactionInterestCharge",
+    "ManagedPositionLimits",
+    "PositionLimitType",
+    "PositionLimitSettings",
+    "PositionLimitValue",
+    "AmountBlock",
+    "AmountBlockType",
+    "Priority",
+    "Amount",
+    "DateType",
+    "Date",
+    "InitiationDate",
+    "Status"
+   ]
+  }
+ },
+ "PartyReferenceDataDirectory": {
+  "title": "Party Reference Data Directory",
+  "description": "This service domain maintains a range of party reference information covering aspects including general reference details, contacts and associations and demographic information",
+  "control_record": [
+   "PartyReferenceDataDirectoryEntry"
+  ],
+  "behavior_qualifiers": [
+   "Associations",
+   "BankRelations",
+   "Demographics",
+   "Reference"
+  ],
+  "control_record_attributes": {
+   "PartyReferenceDataDirectoryEntry": [
+    "PartyReference",
+    "DirectoryEntryDateType",
+    "DirectoryEntryDate",
+    "PartyType"
+   ]
+  }
+ },
+ "ProductDirectory": {
+  "title": "Product Directory",
+  "description": "This service domain maintains a comprehensive directory of the bank's products and services. It can be referenced to obtain product details used to support activities including product selection, sales and marketing, on-boarding, servicing and product fulfillment.",
+  "control_record": [
+   "ProductDirectoryEntry"
+  ],
+  "behavior_qualifiers": [
+   "Operations",
+   "Production",
+   "SalesandMarketing",
+   "Servicing"
+  ],
+  "control_record_attributes": {
+   "ProductDirectoryEntry": [
+    "ProductVersion",
+    "DirectoryEntryDateType",
+    "DirectoryEntryDate",
+    "DirectoryEntryStatus"
+   ]
+  }
+ },
+ "BranchLocationManagement": {
+  "title": "Branch Location Management",
+  "description": "Manage and oversee branch activity, assign resources to optimize branch performance",
+  "control_record": [
+   "BranchLocationManagementPlan"
+  ],
+  "behavior_qualifiers": [
+   "CustomerLiaison",
+   "ProductandServicePlanning",
+   "StaffandLocationPlanning",
+   "Troubleshooting"
+  ],
+  "control_record_attributes": {
+   "BranchLocationManagementPlan": [
+    "PlanGoal",
+    "PlanBudget",
+    "PlannedAction",
+    "PlanType",
+    "PlanValidityPeriod",
+    "PlanDescription"
+   ]
+  }
+ }
+}

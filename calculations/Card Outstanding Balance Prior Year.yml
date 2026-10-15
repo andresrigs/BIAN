@@ -1,0 +1,6 @@
+unique_name: Card Outstanding Balance Prior Year
+object_type: metric_calc
+label: Card Outstanding Balance Prior Year
+description: "Card Outstanding Balance one year earlier, by Snapshot Date."
+expression: "CASE WHEN ISEMPTY([Measures].[Card Outstanding Balance]) THEN NULL ELSE (ParallelPeriod([Snapshot Date Dimension].[Snapshot Date Hierarchy].[Snapshot Year], 1, [Snapshot Date Dimension].[Snapshot Date Hierarchy].CurrentMember), [Measures].[Card Outstanding Balance]) END"
+format: "$#,##0.00"

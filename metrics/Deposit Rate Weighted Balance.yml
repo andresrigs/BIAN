@@ -1,0 +1,13 @@
+unique_name: Deposit Rate Weighted Balance
+object_type: metric
+label: Deposit Rate Weighted Balance
+description: "Balance x interest rate at period end; numerator of Weighted Average Deposit Rate."
+calculation_method: sum
+dataset: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+column: RATE_WEIGHTED_BALANCE_AMT
+format: "#,##0.00"
+unrelated_dimensions_handling: repeat
+semi_additive:
+  position: last
+  relationships:
+  - deposit_snapshot_Date_Snapshot

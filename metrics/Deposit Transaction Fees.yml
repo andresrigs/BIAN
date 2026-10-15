@@ -1,0 +1,9 @@
+unique_name: Deposit Transaction Fees
+object_type: metric
+label: Deposit Transaction Fees
+description: "Fees charged on deposit transactions."
+calculation_method: sum
+dataset: FACT_DEPOSIT_TRANSACTION
+column: FEE_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat

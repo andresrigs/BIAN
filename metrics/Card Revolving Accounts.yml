@@ -1,0 +1,13 @@
+unique_name: Card Revolving Accounts
+object_type: metric
+label: Card Revolving Accounts
+description: "Card accounts carrying a revolving balance at period end."
+calculation_method: sum
+dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+column: REVOLVING_ACCOUNT_FLAG
+format: "#,##0"
+unrelated_dimensions_handling: repeat
+semi_additive:
+  position: last
+  relationships:
+  - card_snapshot_Date_Snapshot

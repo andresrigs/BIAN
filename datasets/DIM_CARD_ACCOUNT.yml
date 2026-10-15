@@ -1,0 +1,25 @@
+unique_name: DIM_CARD_ACCOUNT
+object_type: dataset
+label: DIM_CARD_ACCOUNT
+description: "BIAN Credit Card service domain, CreditCardFacility control record: card account with credit plan, network and status."
+connection_id: Connection - BIAN Banking
+table: DIM_CARD_ACCOUNT
+columns:
+- name: CARD_ACCOUNT_ID
+  data_type: long
+- name: CARD_ACCOUNT_NUMBER
+  data_type: string
+- name: PARTY_ID
+  data_type: long
+- name: PRODUCT_ID
+  data_type: long
+- name: CARD_NETWORK
+  data_type: string
+- name: CREDIT_PLAN_TYPE
+  data_type: string
+- name: ACCOUNT_STATUS
+  data_type: string
+- name: BILLING_CYCLE_DAY
+  data_type: long
+- name: OPEN_DATE
+  data_type: date

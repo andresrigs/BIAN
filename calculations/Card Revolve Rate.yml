@@ -1,0 +1,6 @@
+unique_name: Card Revolve Rate
+object_type: metric_calc
+label: Card Revolve Rate
+description: "Share of card accounts carrying a revolving balance."
+expression: "Divide([Measures].[Card Revolving Accounts], [Measures].[Card Accounts])"
+format: "0.00%"

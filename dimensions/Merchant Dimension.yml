@@ -1,0 +1,53 @@
+unique_name: Merchant Dimension
+object_type: dimension
+label: Merchant Dimension
+description: "BIAN Merchant Relations — merchant where a card transaction was captured, classified by MCC."
+type: standard
+hierarchies:
+- unique_name: Merchant Hierarchy
+  label: Merchant Hierarchy
+  description: MCC Category > Merchant.
+  folder: Merchant Attributes
+  levels:
+  - unique_name: MCC Category
+  - unique_name: Merchant Name
+    secondary_attributes:
+    - unique_name: MCC Code
+      label: MCC Code
+      description: "ISO 18245 merchant category code."
+      folder: Merchant Attributes
+      dataset: DIM_MERCHANT
+      name_column: MCC_CODE
+      key_columns:
+      - MCC_CODE
+    - unique_name: Merchant Country
+      label: Merchant Country
+      description: "Merchant country."
+      folder: Merchant Attributes
+      dataset: DIM_MERCHANT
+      name_column: MERCHANT_COUNTRY
+      key_columns:
+      - MERCHANT_COUNTRY
+    - unique_name: Acquirer Name
+      label: Acquirer Name
+      description: "Merchant acquiring bank (BIAN Merchant Acquiring Facility)."
+      folder: Merchant Attributes
+      dataset: DIM_MERCHANT
+      name_column: ACQUIRER_NAME
+      key_columns:
+      - ACQUIRER_NAME
+level_attributes:
+- unique_name: MCC Category
+  label: MCC Category
+  description: "Merchant category group (Grocery, Travel, Fuel, ...)."
+  dataset: DIM_MERCHANT
+  name_column: MCC_CATEGORY
+  key_columns:
+  - MCC_CATEGORY
+- unique_name: Merchant Name
+  label: Merchant Name
+  description: "Merchant."
+  dataset: DIM_MERCHANT
+  name_column: MERCHANT_NAME
+  key_columns:
+  - MERCHANT_ID

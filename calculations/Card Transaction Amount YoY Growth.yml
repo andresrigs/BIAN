@@ -1,0 +1,6 @@
+unique_name: Card Transaction Amount YoY Growth
+object_type: metric_calc
+label: Card Transaction Amount YoY Growth
+description: "Year-over-year growth of card transaction value, by Transaction Date."
+expression: "Divide([Measures].[Card Transaction Amount] - [Measures].[Card Transaction Amount Prior Year], [Measures].[Card Transaction Amount Prior Year])"
+format: "0.00%"

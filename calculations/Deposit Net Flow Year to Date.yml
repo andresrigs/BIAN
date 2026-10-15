@@ -1,0 +1,6 @@
+unique_name: Deposit Net Flow Year to Date
+object_type: metric_calc
+label: Deposit Net Flow Year to Date
+description: "Year-to-date net deposit flow, by Transaction Date."
+expression: "CASE WHEN ISEMPTY([Measures].[Deposit Credits]) AND ISEMPTY([Measures].[Deposit Debits]) THEN NULL ELSE Aggregate(PeriodsToDate([Transaction Date Dimension].[Transaction Date Hierarchy].[Transaction Year], [Transaction Date Dimension].[Transaction Date Hierarchy].CurrentMember), [Measures].[Deposit Credits]) - Aggregate(PeriodsToDate([Transaction Date Dimension].[Transaction Date Hierarchy].[Transaction Year], [Transaction Date Dimension].[Transaction Date Hierarchy].CurrentMember), [Measures].[Deposit Debits]) END"
+format: "$#,##0.00"

@@ -1,0 +1,13 @@
+unique_name: Term Deposit Principal
+object_type: metric
+label: Term Deposit Principal
+description: "Principal placed in term deposits at period end (BIAN Term Deposit)."
+calculation_method: sum
+dataset: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+column: TERM_DEPOSIT_PRINCIPAL_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat
+semi_additive:
+  position: last
+  relationships:
+  - deposit_snapshot_Date_Snapshot

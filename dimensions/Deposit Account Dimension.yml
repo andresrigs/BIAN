@@ -1,0 +1,77 @@
+unique_name: Deposit Account Dimension
+object_type: dimension
+label: Deposit Account Dimension
+description: "BIAN Current Account, Savings Account, Term Deposit and Corporate Current Account facility control records."
+type: standard
+hierarchies:
+- unique_name: Deposit Account Hierarchy
+  label: Deposit Account Hierarchy
+  description: Account Type > Deposit Account.
+  folder: Deposit Account Attributes
+  levels:
+  - unique_name: Deposit Account Type
+  - unique_name: Deposit Account
+    secondary_attributes:
+    - unique_name: Deposit Account Status
+      label: Deposit Account Status
+      description: "Active, Dormant, Blocked or Closed."
+      folder: Deposit Account Attributes
+      dataset: DIM_DEPOSIT_ACCOUNT
+      name_column: ACCOUNT_STATUS
+      key_columns:
+      - ACCOUNT_STATUS
+    - unique_name: Interest Rate Type
+      label: Interest Rate Type
+      description: "Fixed, Variable or Tiered (BIAN Interest BQ)."
+      folder: Deposit Account Attributes
+      dataset: DIM_DEPOSIT_ACCOUNT
+      name_column: INTEREST_RATE_TYPE
+      key_columns:
+      - INTEREST_RATE_TYPE
+    - unique_name: Term Months
+      label: Term Months
+      description: "Contractual term for term deposits."
+      folder: Deposit Account Attributes
+      dataset: DIM_DEPOSIT_ACCOUNT
+      name_column: TERM_MONTHS
+      key_columns:
+      - TERM_MONTHS
+    - unique_name: Rollover Instruction
+      label: Rollover Instruction
+      description: "BIAN Term Deposit Rollover BQ instruction at maturity."
+      folder: Deposit Account Attributes
+      dataset: DIM_DEPOSIT_ACCOUNT
+      name_column: ROLLOVER_INSTRUCTION
+      key_columns:
+      - ROLLOVER_INSTRUCTION
+    - unique_name: Deposit Open Date
+      label: Deposit Open Date
+      description: "Account opening date."
+      folder: Deposit Account Attributes
+      dataset: DIM_DEPOSIT_ACCOUNT
+      name_column: OPEN_DATE
+      key_columns:
+      - OPEN_DATE
+    - unique_name: Maturity Date
+      label: Maturity Date
+      description: "Term deposit maturity date."
+      folder: Deposit Account Attributes
+      dataset: DIM_DEPOSIT_ACCOUNT
+      name_column: MATURITY_DATE
+      key_columns:
+      - MATURITY_DATE
+level_attributes:
+- unique_name: Deposit Account Type
+  label: Deposit Account Type
+  description: "BIAN AccountType: Current, Savings, Term Deposit, Corporate Current."
+  dataset: DIM_DEPOSIT_ACCOUNT
+  name_column: ACCOUNT_TYPE
+  key_columns:
+  - ACCOUNT_TYPE
+- unique_name: Deposit Account
+  label: Deposit Account
+  description: "Deposit account number."
+  dataset: DIM_DEPOSIT_ACCOUNT
+  name_column: ACCOUNT_NUMBER
+  key_columns:
+  - DEPOSIT_ACCOUNT_ID

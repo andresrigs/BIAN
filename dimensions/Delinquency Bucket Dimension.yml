@@ -1,0 +1,20 @@
+unique_name: Delinquency Bucket Dimension
+object_type: dimension
+label: Delinquency Bucket Dimension
+description: "Card Collections delinquency bucket at month end (Current, 1-29, 30-59, 60-89, 90+ DPD)."
+is_degenerate: true
+hierarchies:
+- unique_name: Delinquency Bucket
+  label: Delinquency Bucket
+  description: "Card Collections delinquency bucket at month end (Current, 1-29, 30-59, 60-89, 90+ DPD)."
+  folder: Card Account Attributes
+  levels:
+  - unique_name: Delinquency Bucket
+level_attributes:
+- unique_name: Delinquency Bucket
+  label: Delinquency Bucket
+  description: "Days-past-due bucket."
+  dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+  name_column: DELINQUENCY_BUCKET
+  key_columns:
+  - DELINQUENCY_BUCKET

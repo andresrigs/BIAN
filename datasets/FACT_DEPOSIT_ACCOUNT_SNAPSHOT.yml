@@ -1,0 +1,47 @@
+unique_name: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+object_type: dataset
+label: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+description: "Month-end deposit account position (BIAN Current/Savings/Term Deposit/Corporate Current Account: AmountBlock, Interest, Charge BQs)."
+connection_id: Connection - BIAN Banking
+table: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+columns:
+- name: DEPOSIT_ACCOUNT_ID
+  data_type: long
+- name: SNAPSHOT_DATE_KEY
+  data_type: long
+- name: PARTY_ID
+  data_type: long
+- name: PRODUCT_ID
+  data_type: long
+- name: BRANCH_ID
+  data_type: long
+- name: CURRENCY_CODE
+  data_type: string
+- name: LEDGER_BALANCE_AMT
+  data_type: double
+- name: AVAILABLE_BALANCE_AMT
+  data_type: double
+- name: BLOCKED_AMT
+  data_type: double
+- name: OVERDRAFT_LIMIT_AMT
+  data_type: double
+- name: OVERDRAFT_USED_AMT
+  data_type: double
+- name: TERM_DEPOSIT_PRINCIPAL_AMT
+  data_type: double
+- name: INTEREST_RATE_PCT
+  data_type: double
+- name: INTEREST_ACCRUED_AMT
+  data_type: double
+- name: INTEREST_PAID_AMT
+  data_type: double
+- name: MAINTENANCE_FEE_AMT
+  data_type: double
+- name: DORMANT_FLAG
+  data_type: long
+- name: RATE_WEIGHTED_BALANCE_AMT
+  data_type: double
+  sql: "LEDGER_BALANCE_AMT * INTEREST_RATE_PCT"
+- name: DORMANT_BALANCE_AMT
+  data_type: double
+  sql: "CASE WHEN DORMANT_FLAG = 1 THEN LEDGER_BALANCE_AMT ELSE 0 END"

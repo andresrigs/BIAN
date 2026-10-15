@@ -1,0 +1,86 @@
+unique_name: Party Dimension
+object_type: dimension
+label: Party Dimension
+description: "BIAN Party Reference Data Directory — the customer / party involved in card and deposit arrangements (CustomerReference, PartyReference, CardHolderReference)."
+type: standard
+hierarchies:
+- unique_name: Party Hierarchy
+  label: Party Hierarchy
+  description: Party Type > Customer Segment > Party.
+  folder: Party Attributes
+  levels:
+  - unique_name: Party Type
+  - unique_name: Customer Segment
+  - unique_name: Party Name
+    secondary_attributes:
+    - unique_name: Party Status
+      label: Party Status
+      description: "Lifecycle status of the party (Active, Inactive, Deceased, Closed)."
+      folder: Party Attributes
+      dataset: DIM_PARTY
+      name_column: PARTY_STATUS
+      key_columns:
+      - PARTY_STATUS
+    - unique_name: KYC Status
+      label: KYC Status
+      description: "Know-your-customer verification status."
+      folder: Party Attributes
+      dataset: DIM_PARTY
+      name_column: KYC_STATUS
+      key_columns:
+      - KYC_STATUS
+    - unique_name: Party Country
+      label: Party Country
+      description: "Country of residence / incorporation."
+      folder: Party Attributes
+      dataset: DIM_PARTY
+      name_column: COUNTRY_NAME
+      key_columns:
+      - COUNTRY_NAME
+    - unique_name: Party State
+      label: Party State
+      description: "State / province of the party address."
+      folder: Party Attributes
+      dataset: DIM_PARTY
+      name_column: STATE_NAME
+      key_columns:
+      - STATE_NAME
+    - unique_name: Party City
+      label: Party City
+      description: "City of the party address."
+      folder: Party Attributes
+      dataset: DIM_PARTY
+      name_column: CITY_NAME
+      key_columns:
+      - CITY_NAME
+    - unique_name: Party Onboarding Date
+      label: Party Onboarding Date
+      description: "Date the party was onboarded."
+      folder: Party Attributes
+      dataset: DIM_PARTY
+      name_column: ONBOARDING_DATE
+      key_columns:
+      - ONBOARDING_DATE
+level_attributes:
+- unique_name: Party Type
+  label: Party Type
+  description: "BIAN PartyType: Individual or Organization."
+  dataset: DIM_PARTY
+  name_column: PARTY_TYPE
+  key_columns:
+  - PARTY_TYPE
+- unique_name: Customer Segment
+  label: Customer Segment
+  description: "Commercial segment (Mass Retail, Affluent, Private, Small Business, Commercial, Corporate)."
+  dataset: DIM_PARTY
+  name_column: CUSTOMER_SEGMENT
+  key_columns:
+  - PARTY_TYPE
+  - CUSTOMER_SEGMENT
+- unique_name: Party Name
+  label: Party Name
+  description: "Individual party / customer."
+  dataset: DIM_PARTY
+  name_column: PARTY_NAME
+  key_columns:
+  - PARTY_ID

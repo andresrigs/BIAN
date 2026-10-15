@@ -1,0 +1,6 @@
+unique_name: Total Fee Income
+object_type: metric_calc
+label: Total Fee Income
+description: "Card fees, interchange and FX charges plus deposit maintenance and transaction fees."
+expression: "[Measures].[Card Fees Charged] + [Measures].[Card Interchange Fee] + [Measures].[Card FX Conversion Charges] + [Measures].[Deposit Maintenance Fees] + [Measures].[Deposit Transaction Fees]"
+format: "$#,##0.00"

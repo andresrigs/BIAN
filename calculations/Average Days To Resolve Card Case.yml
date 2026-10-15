@@ -1,0 +1,6 @@
+unique_name: Average Days To Resolve Card Case
+object_type: metric_calc
+label: Average Days To Resolve Card Case
+description: "Mean case resolution time in days."
+expression: "Divide([Measures].[Card Case Days To Resolve], [Measures].[Card Case Count])"
+format: "#,##0.00"

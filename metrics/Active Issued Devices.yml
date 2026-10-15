@@ -1,0 +1,9 @@
+unique_name: Active Issued Devices
+object_type: metric
+label: Active Issued Devices
+description: "Distinct cards / tokens used in transactions."
+calculation_method: count distinct
+dataset: FACT_CARD_TRANSACTION
+column: ISSUED_DEVICE_ID
+format: "#,##0"
+unrelated_dimensions_handling: repeat

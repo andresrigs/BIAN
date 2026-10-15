@@ -1,0 +1,13 @@
+unique_name: Card Available Credit
+object_type: metric
+label: Card Available Credit
+description: "Undrawn credit available to cardholders at period end."
+calculation_method: sum
+dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+column: AVAILABLE_CREDIT_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat
+semi_additive:
+  position: last
+  relationships:
+  - card_snapshot_Date_Snapshot

@@ -1,0 +1,272 @@
+unique_name: bian_cards
+object_type: model
+label: BIAN Cards
+description: "BIAN Cards business domain: Credit Card, Credit Card Position Keeping, Card Authorization, Card Case, Card Collections, Issued Device Administration, Merchant Relations and Reward Points Account service domains."
+visible: true
+relationships:
+- unique_name: card_snapshot_Date_Snapshot
+  from:
+    dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+    join_columns:
+    - SNAPSHOT_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: "Snapshot {0}"
+- unique_name: card_snapshot_Card_Account
+  from:
+    dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+    join_columns:
+    - CARD_ACCOUNT_ID
+  to:
+    dimension: Card Account Dimension
+    level: Card Account
+- unique_name: card_snapshot_Party
+  from:
+    dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+    join_columns:
+    - PARTY_ID
+  to:
+    dimension: Party Dimension
+    level: Party Name
+- unique_name: card_snapshot_Product
+  from:
+    dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+    join_columns:
+    - PRODUCT_ID
+  to:
+    dimension: Product Dimension
+    level: Product Name
+- unique_name: card_snapshot_Branch
+  from:
+    dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+    join_columns:
+    - BRANCH_ID
+  to:
+    dimension: Branch Dimension
+    level: Branch Name
+- unique_name: card_snapshot_Currency
+  from:
+    dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+    join_columns:
+    - CURRENCY_CODE
+  to:
+    dimension: Currency Dimension
+    level: Currency Code
+- unique_name: card_txn_Date_Transaction
+  from:
+    dataset: FACT_CARD_TRANSACTION
+    join_columns:
+    - TXN_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: "Transaction {0}"
+- unique_name: card_txn_Date_Posting
+  from:
+    dataset: FACT_CARD_TRANSACTION
+    join_columns:
+    - POSTING_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: "Posting {0}"
+- unique_name: card_txn_Card_Account
+  from:
+    dataset: FACT_CARD_TRANSACTION
+    join_columns:
+    - CARD_ACCOUNT_ID
+  to:
+    dimension: Card Account Dimension
+    level: Card Account
+- unique_name: card_txn_Issued_Device
+  from:
+    dataset: FACT_CARD_TRANSACTION
+    join_columns:
+    - ISSUED_DEVICE_ID
+  to:
+    dimension: Issued Device Dimension
+    level: Issued Device
+- unique_name: card_txn_Merchant
+  from:
+    dataset: FACT_CARD_TRANSACTION
+    join_columns:
+    - MERCHANT_ID
+  to:
+    dimension: Merchant Dimension
+    level: Merchant Name
+- unique_name: card_txn_Party
+  from:
+    dataset: FACT_CARD_TRANSACTION
+    join_columns:
+    - PARTY_ID
+  to:
+    dimension: Party Dimension
+    level: Party Name
+- unique_name: card_txn_Product
+  from:
+    dataset: FACT_CARD_TRANSACTION
+    join_columns:
+    - PRODUCT_ID
+  to:
+    dimension: Product Dimension
+    level: Product Name
+- unique_name: card_txn_Currency
+  from:
+    dataset: FACT_CARD_TRANSACTION
+    join_columns:
+    - CURRENCY_CODE
+  to:
+    dimension: Currency Dimension
+    level: Currency Code
+- unique_name: card_txn_Channel
+  from:
+    dataset: FACT_CARD_TRANSACTION
+    join_columns:
+    - CHANNEL_ID
+  to:
+    dimension: Channel Dimension
+    level: Channel Name
+- unique_name: card_case_Date_Opened
+  from:
+    dataset: FACT_CARD_CASE
+    join_columns:
+    - CASE_OPENED_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: "Case Opened {0}"
+- unique_name: card_case_Date_Closed
+  from:
+    dataset: FACT_CARD_CASE
+    join_columns:
+    - CASE_CLOSED_DATE_KEY
+  to:
+    dimension: Date Dimension
+    level: Day
+  role_play: "Case Closed {0}"
+- unique_name: card_case_Card_Account
+  from:
+    dataset: FACT_CARD_CASE
+    join_columns:
+    - CARD_ACCOUNT_ID
+  to:
+    dimension: Card Account Dimension
+    level: Card Account
+- unique_name: card_case_Merchant
+  from:
+    dataset: FACT_CARD_CASE
+    join_columns:
+    - MERCHANT_ID
+  to:
+    dimension: Merchant Dimension
+    level: Merchant Name
+- unique_name: card_case_Party
+  from:
+    dataset: FACT_CARD_CASE
+    join_columns:
+    - PARTY_ID
+  to:
+    dimension: Party Dimension
+    level: Party Name
+- unique_name: card_case_Product
+  from:
+    dataset: FACT_CARD_CASE
+    join_columns:
+    - PRODUCT_ID
+  to:
+    dimension: Product Dimension
+    level: Product Name
+dimensions:
+- Card Transaction Type Dimension
+- Authorization Decision Dimension
+- Entry Mode Dimension
+- Delinquency Bucket Dimension
+- Card Case Dimension
+metrics:
+- unique_name: Card Credit Limit
+  folder: Card Balances
+- unique_name: Card Outstanding Balance
+  folder: Card Balances
+- unique_name: Card Available Credit
+  folder: Card Balances
+- unique_name: Card Statement Balance
+  folder: Card Balances
+- unique_name: Card Minimum Payment Due
+  folder: Card Balances
+- unique_name: Card Past Due Amount
+  folder: Card Balances
+- unique_name: Card Delinquent Balance
+  folder: Card Balances
+- unique_name: Card Revolving Accounts
+  folder: Card Balances
+- unique_name: Card Reward Points Balance
+  folder: Card Balances
+- unique_name: Card Accounts
+  folder: Card Balances
+- unique_name: Card Interest Charged
+  folder: Card Revenue
+- unique_name: Card Fees Charged
+  folder: Card Revenue
+- unique_name: Card Payments Received
+  folder: Card Revenue
+- unique_name: Card Interchange Fee
+  folder: Card Revenue
+- unique_name: Card FX Conversion Charges
+  folder: Card Revenue
+- unique_name: Card Transaction Amount
+  folder: Card Activity
+- unique_name: Card Purchase Amount
+  folder: Card Activity
+- unique_name: Card Transaction Count
+  folder: Card Activity
+- unique_name: Card Approved Transaction Count
+  folder: Card Activity
+- unique_name: Card Fraud Transaction Count
+  folder: Card Activity
+- unique_name: Card Cross Border Transaction Count
+  folder: Card Activity
+- unique_name: Card Present Transaction Count
+  folder: Card Activity
+- unique_name: Card Reward Points Earned
+  folder: Card Activity
+- unique_name: Transacting Cardholders
+  folder: Card Activity
+- unique_name: Active Issued Devices
+  folder: Card Activity
+- unique_name: Card Case Count
+  folder: Card Cases
+- unique_name: Card Disputed Amount
+  folder: Card Cases
+- unique_name: Card Chargeback Amount
+  folder: Card Cases
+- unique_name: Card Recovered Amount
+  folder: Card Cases
+- unique_name: Card Case Days To Resolve
+  folder: Card Cases
+- unique_name: Card Credit Utilization
+  folder: Card Ratios
+- unique_name: Card Delinquency Rate
+  folder: Card Ratios
+- unique_name: Card Revolve Rate
+  folder: Card Ratios
+- unique_name: Card Authorization Approval Rate
+  folder: Card Ratios
+- unique_name: Card Fraud Rate
+  folder: Card Ratios
+- unique_name: Card Average Transaction Value
+  folder: Card Ratios
+- unique_name: Card Dispute Rate
+  folder: Card Ratios
+- unique_name: Card Interchange Yield
+  folder: Card Ratios
+- unique_name: Average Days To Resolve Card Case
+  folder: Card Ratios
+- unique_name: Card Transaction Amount Prior Year
+  folder: Card Time Intelligence
+- unique_name: Card Transaction Amount YoY Growth
+  folder: Card Time Intelligence
+- unique_name: Card Transaction Amount Year to Date
+  folder: Card Time Intelligence
+- unique_name: Card Outstanding Balance Prior Year
+  folder: Card Time Intelligence

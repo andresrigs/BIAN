@@ -1,0 +1,9 @@
+unique_name: Card Fees Charged
+object_type: metric
+label: Card Fees Charged
+description: "Card fees billed (annual, late, over-limit) (BIAN Charge BQ)."
+calculation_method: sum
+dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+column: FEES_CHARGED_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat

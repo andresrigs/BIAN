@@ -1,0 +1,6 @@
+unique_name: Total Customer Balances
+object_type: metric_calc
+label: Total Customer Balances
+description: "Deposit liabilities plus card receivables at period end — the customer's total balance relationship with the bank."
+expression: "[Measures].[Deposit Ledger Balance] + [Measures].[Card Outstanding Balance]"
+format: "$#,##0.00"

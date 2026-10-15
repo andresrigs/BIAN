@@ -1,0 +1,39 @@
+unique_name: FACT_DEPOSIT_TRANSACTION
+object_type: dataset
+label: FACT_DEPOSIT_TRANSACTION
+description: "Deposit account postings (BIAN Position Keeping FinancialPositionLog; Deposit, DebitandCredit, Payment, Sweep, Interest, Charge BQs)."
+connection_id: Connection - BIAN Banking
+table: FACT_DEPOSIT_TRANSACTION
+columns:
+- name: DEPOSIT_TXN_ID
+  data_type: long
+- name: DEPOSIT_ACCOUNT_ID
+  data_type: long
+- name: PARTY_ID
+  data_type: long
+- name: PRODUCT_ID
+  data_type: long
+- name: BRANCH_ID
+  data_type: long
+- name: CHANNEL_ID
+  data_type: long
+- name: CURRENCY_CODE
+  data_type: string
+- name: TXN_DATE_KEY
+  data_type: long
+- name: VALUE_DATE_KEY
+  data_type: long
+- name: DEPOSIT_TXN_TYPE
+  data_type: string
+- name: DEBIT_CREDIT_IND
+  data_type: string
+- name: TXN_AMT
+  data_type: double
+- name: FEE_AMT
+  data_type: double
+- name: CREDIT_AMT
+  data_type: double
+  sql: "CASE WHEN DEBIT_CREDIT_IND = 'Credit' THEN TXN_AMT ELSE 0 END"
+- name: DEBIT_AMT
+  data_type: double
+  sql: "CASE WHEN DEBIT_CREDIT_IND = 'Debit' THEN TXN_AMT ELSE 0 END"

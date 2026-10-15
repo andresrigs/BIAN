@@ -1,0 +1,13 @@
+# Build parameters supplied in the chat request (written here for reproducibility)
+model_unique_name: bian_model            # composite; label "BIAN Model"
+composite: true
+component_models: [bian_cards, bian_deposits]
+catalog_unique_name: bian_model_catalog
+warehouse: Snowflake
+connection: {database: BIAN_DEMO, schema: BIAN}
+use_cases_covered: [Cards, Deposits]
+use_cases_excluded: [Loans, Mortgages, Leasing, Trade Banking, Investment, Market Operations, all non-product business areas]
+unrelated_dimension_handling: repeat
+currency: USD
+time_window: calendar
+semi_additive_default: last (snapshot facts, over Snapshot Date relationship)

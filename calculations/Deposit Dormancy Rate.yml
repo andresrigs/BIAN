@@ -1,0 +1,6 @@
+unique_name: Deposit Dormancy Rate
+object_type: metric_calc
+label: Deposit Dormancy Rate
+description: "Dormant balance as % of ledger balance."
+expression: "Divide([Measures].[Dormant Deposit Balance], [Measures].[Deposit Ledger Balance])"
+format: "0.00%"

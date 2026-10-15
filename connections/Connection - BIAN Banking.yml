@@ -1,0 +1,6 @@
+unique_name: Connection - BIAN Banking
+object_type: connection
+label: Connection - BIAN Banking
+as_connection: Snowflake
+database: BIAN_DEMO
+schema: BIAN

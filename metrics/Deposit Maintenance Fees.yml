@@ -1,0 +1,9 @@
+unique_name: Deposit Maintenance Fees
+object_type: metric
+label: Deposit Maintenance Fees
+description: "Account maintenance fees (BIAN Charge BQ)."
+calculation_method: sum
+dataset: FACT_DEPOSIT_ACCOUNT_SNAPSHOT
+column: MAINTENANCE_FEE_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat

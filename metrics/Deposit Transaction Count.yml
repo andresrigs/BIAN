@@ -1,0 +1,9 @@
+unique_name: Deposit Transaction Count
+object_type: metric
+label: Deposit Transaction Count
+description: "Number of deposit postings (BIAN Position Keeping)."
+calculation_method: count non-null
+dataset: FACT_DEPOSIT_TRANSACTION
+column: DEPOSIT_TXN_ID
+format: "#,##0"
+unrelated_dimensions_handling: repeat

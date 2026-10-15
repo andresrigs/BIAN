@@ -1,0 +1,71 @@
+unique_name: Product Dimension
+object_type: dimension
+label: Product Dimension
+description: "BIAN Product Directory — product instances classified by the BIAN Service Landscape (Business Area > Business Domain > Service Domain)."
+type: standard
+hierarchies:
+- unique_name: BIAN Product Hierarchy
+  label: BIAN Product Hierarchy
+  description: BIAN Business Area > Business Domain > Service Domain > Product.
+  folder: Product Attributes
+  levels:
+  - unique_name: BIAN Business Area
+  - unique_name: BIAN Business Domain
+  - unique_name: BIAN Service Domain
+  - unique_name: Product Name
+    secondary_attributes:
+    - unique_name: Product Code
+      label: Product Code
+      description: "Internal product code."
+      folder: Product Attributes
+      dataset: DIM_PRODUCT
+      name_column: PRODUCT_CODE
+      key_columns:
+      - PRODUCT_CODE
+    - unique_name: Product Line
+      label: Product Line
+      description: "Cards or Deposits."
+      folder: Product Attributes
+      dataset: DIM_PRODUCT
+      name_column: PRODUCT_LINE
+      key_columns:
+      - PRODUCT_LINE
+    - unique_name: Interest Bearing
+      label: Interest Bearing
+      description: "Y if the product accrues interest."
+      folder: Product Attributes
+      dataset: DIM_PRODUCT
+      name_column: INTEREST_BEARING_FLAG
+      key_columns:
+      - INTEREST_BEARING_FLAG
+level_attributes:
+- unique_name: BIAN Business Area
+  label: BIAN Business Area
+  description: "BIAN Business Area (e.g. Products)."
+  dataset: DIM_PRODUCT
+  name_column: BIAN_BUSINESS_AREA
+  key_columns:
+  - BIAN_BUSINESS_AREA
+- unique_name: BIAN Business Domain
+  label: BIAN Business Domain
+  description: "BIAN Business Domain (Cards, Loans and Deposits, Consumer Banking, Corporate Banking)."
+  dataset: DIM_PRODUCT
+  name_column: BIAN_BUSINESS_DOMAIN
+  key_columns:
+  - BIAN_BUSINESS_AREA
+  - BIAN_BUSINESS_DOMAIN
+- unique_name: BIAN Service Domain
+  label: BIAN Service Domain
+  description: "BIAN Service Domain that fulfils the product (Credit Card, Current Account, Savings Account, Term Deposit, Corporate Current Account)."
+  dataset: DIM_PRODUCT
+  name_column: BIAN_SERVICE_DOMAIN
+  key_columns:
+  - BIAN_BUSINESS_DOMAIN
+  - BIAN_SERVICE_DOMAIN
+- unique_name: Product Name
+  label: Product Name
+  description: "Product instance offered to customers."
+  dataset: DIM_PRODUCT
+  name_column: PRODUCT_NAME
+  key_columns:
+  - PRODUCT_ID

@@ -1,0 +1,9 @@
+unique_name: Card Disputed Amount
+object_type: metric
+label: Card Disputed Amount
+description: "Transaction value under dispute."
+calculation_method: sum
+dataset: FACT_CARD_CASE
+column: DISPUTED_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat

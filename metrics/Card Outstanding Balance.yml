@@ -1,0 +1,13 @@
+unique_name: Card Outstanding Balance
+object_type: metric
+label: Card Outstanding Balance
+description: "Card receivables outstanding at period end (last snapshot)."
+calculation_method: sum
+dataset: FACT_CARD_ACCOUNT_SNAPSHOT
+column: OUTSTANDING_BALANCE_AMT
+format: "$#,##0.00"
+unrelated_dimensions_handling: repeat
+semi_additive:
+  position: last
+  relationships:
+  - card_snapshot_Date_Snapshot

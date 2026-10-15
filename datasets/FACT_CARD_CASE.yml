@@ -1,0 +1,37 @@
+unique_name: FACT_CARD_CASE
+object_type: dataset
+label: FACT_CARD_CASE
+description: "Card disputes, chargebacks and fraud claims (BIAN Card Case: Chargeback, Arbitration, Resolution BQs)."
+connection_id: Connection - BIAN Banking
+table: FACT_CARD_CASE
+columns:
+- name: CARD_CASE_ID
+  data_type: long
+- name: CARD_TXN_ID
+  data_type: long
+- name: CARD_ACCOUNT_ID
+  data_type: long
+- name: PARTY_ID
+  data_type: long
+- name: PRODUCT_ID
+  data_type: long
+- name: MERCHANT_ID
+  data_type: long
+- name: CASE_OPENED_DATE_KEY
+  data_type: long
+- name: CASE_CLOSED_DATE_KEY
+  data_type: long
+- name: CARD_CASE_TYPE
+  data_type: string
+- name: CASE_STATUS
+  data_type: string
+- name: RESOLUTION_OUTCOME
+  data_type: string
+- name: DISPUTED_AMT
+  data_type: double
+- name: CHARGEBACK_AMT
+  data_type: double
+- name: RECOVERED_AMT
+  data_type: double
+- name: DAYS_TO_RESOLVE
+  data_type: long

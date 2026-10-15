@@ -1,0 +1,11 @@
+unique_name: DIM_CURRENCY
+object_type: dataset
+label: DIM_CURRENCY
+description: "ISO 4217 currency reference (AccountCurrency / CardTransactionCurrency)."
+connection_id: Connection - BIAN Banking
+table: DIM_CURRENCY
+columns:
+- name: CURRENCY_CODE
+  data_type: string
+- name: CURRENCY_NAME
+  data_type: string

@@ -1,0 +1,6 @@
+unique_name: Card Transaction Amount Year to Date
+object_type: metric_calc
+label: Card Transaction Amount Year to Date
+description: "Year-to-date card transaction value, by Transaction Date."
+expression: "CASE WHEN ISEMPTY([Measures].[Card Transaction Amount]) THEN NULL ELSE Aggregate(PeriodsToDate([Transaction Date Dimension].[Transaction Date Hierarchy].[Transaction Year], [Transaction Date Dimension].[Transaction Date Hierarchy].CurrentMember), [Measures].[Card Transaction Amount]) END"
+format: "$#,##0.00"

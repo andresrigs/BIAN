@@ -1,0 +1,20 @@
+unique_name: bian_model
+object_type: composite_model
+label: BIAN Model
+description: "Composite of the BIAN Cards and BIAN Deposits models, joined on the conformed Party, Product (BIAN landscape), Branch, Currency, Channel and Date dimensions."
+models:
+- bian_cards
+- bian_deposits
+metrics:
+- unique_name: Total Customer Balances
+  folder: Customer Relationship
+- unique_name: Net Customer Liquidity
+  folder: Customer Relationship
+- unique_name: Deposit to Card Balance Ratio
+  folder: Customer Relationship
+- unique_name: Total Fee Income
+  folder: Customer Relationship
+- unique_name: Total Customer Transaction Value
+  folder: Customer Relationship
+- unique_name: Net Interest Contribution
+  folder: Customer Relationship

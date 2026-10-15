@@ -1,0 +1,17 @@
+unique_name: DIM_BRANCH
+object_type: dataset
+label: DIM_BRANCH
+description: "BIAN Branch Location Management: servicing branch / booking location (BankBranchLocationReference)."
+connection_id: Connection - BIAN Banking
+table: DIM_BRANCH
+columns:
+- name: BRANCH_ID
+  data_type: long
+- name: BRANCH_NAME
+  data_type: string
+- name: BRANCH_TYPE
+  data_type: string
+- name: BRANCH_REGION
+  data_type: string
+- name: BRANCH_COUNTRY
+  data_type: string

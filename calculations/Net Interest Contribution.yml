@@ -1,0 +1,6 @@
+unique_name: Net Interest Contribution
+object_type: metric_calc
+label: Net Interest Contribution
+description: "Card interest billed less deposit interest accrued."
+expression: "[Measures].[Card Interest Charged] - [Measures].[Deposit Interest Accrued]"
+format: "$#,##0.00"

@@ -1,0 +1,13 @@
+unique_name: DIM_CHANNEL
+object_type: dataset
+label: DIM_CHANNEL
+description: "Channel through which a transaction was initiated (BIAN Channels business area: Branch, ATM, POS, eCommerce, Mobile, Online)."
+connection_id: Connection - BIAN Banking
+table: DIM_CHANNEL
+columns:
+- name: CHANNEL_ID
+  data_type: long
+- name: CHANNEL_NAME
+  data_type: string
+- name: CHANNEL_TYPE
+  data_type: string

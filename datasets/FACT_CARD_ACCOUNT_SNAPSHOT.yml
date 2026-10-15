@@ -1,0 +1,49 @@
+unique_name: FACT_CARD_ACCOUNT_SNAPSHOT
+object_type: dataset
+label: FACT_CARD_ACCOUNT_SNAPSHOT
+description: "Month-end card account position (BIAN Credit Card: CreditPlan, Billing, Interest, Charge, Repayment BQs; Card Collections delinquency)."
+connection_id: Connection - BIAN Banking
+table: FACT_CARD_ACCOUNT_SNAPSHOT
+columns:
+- name: CARD_ACCOUNT_ID
+  data_type: long
+- name: SNAPSHOT_DATE_KEY
+  data_type: long
+- name: PARTY_ID
+  data_type: long
+- name: PRODUCT_ID
+  data_type: long
+- name: BRANCH_ID
+  data_type: long
+- name: CURRENCY_CODE
+  data_type: string
+- name: CREDIT_LIMIT_AMT
+  data_type: double
+- name: OUTSTANDING_BALANCE_AMT
+  data_type: double
+- name: AVAILABLE_CREDIT_AMT
+  data_type: double
+- name: STATEMENT_BALANCE_AMT
+  data_type: double
+- name: MIN_PAYMENT_DUE_AMT
+  data_type: double
+- name: PAST_DUE_AMT
+  data_type: double
+- name: DAYS_PAST_DUE
+  data_type: long
+- name: DELINQUENCY_BUCKET
+  data_type: string
+- name: INTEREST_CHARGED_AMT
+  data_type: double
+- name: FEES_CHARGED_AMT
+  data_type: double
+- name: PAYMENTS_RECEIVED_AMT
+  data_type: double
+- name: REWARD_POINTS_BALANCE
+  data_type: long
+- name: DELINQUENT_BALANCE_AMT
+  data_type: double
+  sql: "CASE WHEN DAYS_PAST_DUE >= 30 THEN OUTSTANDING_BALANCE_AMT ELSE 0 END"
+- name: REVOLVING_ACCOUNT_FLAG
+  data_type: long
+  sql: "CASE WHEN OUTSTANDING_BALANCE_AMT > STATEMENT_BALANCE_AMT THEN 1 ELSE 0 END"
